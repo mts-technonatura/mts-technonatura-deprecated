@@ -1,5 +1,6 @@
 export const GA_TRACKING_ID = process.env.GA_TRACKING_ID;
-export const GOOGLE_VERIF = process.env.GOOGLE_VERIF;
+export const GOOGLE_VERIF =
+  process.env.GOOGLE_VERIF || "pYKlXre7UF2sT8gpx6Nf8NKJLM0H5hkh80XIWEmO-yo";
 
 export const pageview = (url) => {
   window.gtag("config", GA_TRACKING_ID, {

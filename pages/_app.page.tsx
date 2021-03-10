@@ -32,7 +32,12 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <meta name="google-site-verification" content={gtag.GOOGLE_VERIF} />
+        <meta
+          name="google-site-verification"
+          content={
+            gtag.GOOGLE_VERIF || "pYKlXre7UF2sT8gpx6Nf8NKJLM0H5hkh80XIWEmO-yo"
+          }
+        />
         <meta name="theme-color" content="#f0efeb" />
       </Head>
       <ProgressLoad />

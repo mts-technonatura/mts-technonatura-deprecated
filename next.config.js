@@ -56,6 +56,17 @@ module.exports = withPlugins(
     ]
   ],
   {
+    pageExtensions: [
+      "page.js",
+      "page.tsx",
+      "page.jsx",
+      "api.js",
+      "api.ts",
+      "_app.js",
+      "_document.js"
+    ]
+  },
+  {
     webpack: (config, { isServer }) => {
       if (isServer) {
         require("./scripts/sitemap-robots-generator")(env.PUBLIC_URL);
