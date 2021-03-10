@@ -14,6 +14,30 @@ const dualENV = {
 
 const env = { ...dualENV[NODE_ENV], isProduction: NODE_ENV === "production" };
 
+// next.js configuration
+const nextConfig = {
+  pageExtensions: [
+    "page.js",
+    "page.tsx",
+    "page.jsx",
+    "api.js",
+    "api.ts",
+    "_app.js",
+    "_document.js"
+  ],
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require("./scripts/sitemap-robots-generator")(env.PUBLIC_URL);
+    }
+    config.module.rules.push({
+      test: /\.md$/,
+      use: "raw-loader"
+    });
+    return config;
+  },
+  env
+};
+
 module.exports = withPlugins(
   [
     [
@@ -55,28 +79,5 @@ module.exports = withPlugins(
       }
     ]
   ],
-  {
-    pageExtensions: [
-      "page.js",
-      "page.tsx",
-      "page.jsx",
-      "api.js",
-      "api.ts",
-      "_app.js",
-      "_document.js"
-    ]
-  },
-  {
-    webpack: (config, { isServer }) => {
-      if (isServer) {
-        require("./scripts/sitemap-robots-generator")(env.PUBLIC_URL);
-      }
-      config.module.rules.push({
-        test: /\.md$/,
-        use: "raw-loader"
-      });
-      return config;
-    },
-    env
-  }
+  nextConfig
 );
