@@ -17,7 +17,7 @@ module.exports = async function (domain) {
   const date = new Date().toJSON();
 
   const pages = await globby([
-    "pages/**/*{.js,.mdx}",
+    "pages/**/*{.page.tsx,.mdx}",
     "!pages/blog/[post].js",
     "!pages/_*.js",
     "!pages/api"
@@ -31,7 +31,7 @@ module.exports = async function (domain) {
             .map((page) => {
               const route = page
                 .replace("pages", "")
-                .replace(".js", "")
+                .replace(".page.tsx", "")
                 .replace(".mdx", "")
                 .replace("/index", "");
 
