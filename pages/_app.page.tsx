@@ -5,6 +5,11 @@ import { useEffect } from "react";
 import * as gtag from "../utils/gtag";
 import { useRouter } from "next/router";
 import ProgressLoad from "../components/ProgressLoad";
+declare global {
+  interface Window {
+    gtag: (event: string, name: any, obj: object) => void;
+  }
+}
 
 export function reportWebVitals({ id, name, label, value }) {
   window.gtag("event", name, {
