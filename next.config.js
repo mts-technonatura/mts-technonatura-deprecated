@@ -20,7 +20,7 @@ const nextConfig = {
     "page.js",
     "page.tsx",
     "page.jsx",
-    "config.tsx",
+    "cPage.tsx",
     "api.js",
     "api.ts",
     "_app.js",

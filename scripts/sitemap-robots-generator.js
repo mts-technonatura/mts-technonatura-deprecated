@@ -18,7 +18,7 @@ module.exports = async function (domain) {
 
   const pages = await globby([
     "pages/**/*{.page.tsx,.mdx}",
-    "!pages/blog/[post].js",
+    "!pages/blog/[post].page.tsx",
     "!pages/_*.js",
     "!pages/api"
   ]);
