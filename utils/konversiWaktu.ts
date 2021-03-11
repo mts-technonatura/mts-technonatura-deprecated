@@ -1,5 +1,5 @@
-export const konversiBulan = (number) => {
-  switch (number) {
+export const konversiBulan = (moonInNum: number) => {
+  switch (moonInNum) {
     case 0:
       return "Januari";
     case 1:
@@ -29,4 +29,4 @@ export const konversiBulan = (number) => {
   }
 };
 
-export const updateTime = (t) => (t < 10 ? "0" + t : t);
+export const updateTime = (t: number) => (t < 10 ? "0" + t : t);

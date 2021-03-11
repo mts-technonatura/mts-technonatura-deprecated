@@ -1,9 +1,15 @@
 import "tailwindcss/tailwind.css";
 
+import { useState } from "react";
+
 import Head from "next/head";
+import { AppProps } from "next/app";
 import { useEffect } from "react";
 import * as gtag from "../utils/gtag";
 import { useRouter } from "next/router";
+
+import FooterComponent, { FooterHome } from "../components/footer";
+import Navbar from "../components/navbar";
 import ProgressLoad from "../components/ProgressLoad";
 declare global {
   interface Window {
@@ -11,7 +17,13 @@ declare global {
   }
 }
 
-export function reportWebVitals({ id, name, label, value }) {
+interface reportWebVitalsI {
+  id: string;
+  name: string;
+  label: string;
+  value: number;
+}
+export function reportWebVitals({ id, name, label, value }: reportWebVitalsI) {
   window.gtag("event", name, {
     event_category: label === "web-vital" ? "Web Vitals" : "Next.js metric",
     value: Math.round(name === "CLS" ? value * 1000 : value),
@@ -20,11 +32,21 @@ export function reportWebVitals({ id, name, label, value }) {
   });
 }
 
-function MyApp({ Component, pageProps }) {
+const doesntAlllowedNavAndFooter: string[] = [
+  "/login",
+  "/signup",
+  "/docs/changelog"
+];
+
+function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
+  let path: string = router.pathname;
+  let [Nav, setNav] = useState<boolean>();
+  let [Footer, setFooter] = useState<JSX.Element | boolean>(FooterComponent);
+
   useEffect(() => {
-    const handleRouteChange = (url) => {
+    const handleRouteChange = (url: string) => {
       gtag.pageview(url);
     };
     router.events.on("routeChangeComplete", handleRouteChange);
@@ -32,6 +54,31 @@ function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
+
+  // useEffect(() => {
+  // console.log(path);
+
+  //   const onIndex: number = doesntAlllowedNavAndFooter.findIndex(
+  //     (site) => site === path
+  //   );
+  //   console.log(onIndex);
+  //   if (onIndex !== -1) {
+  //     setNav(false);
+  //     setFooter(false);
+  //   } else {
+  //     switch (path) {
+  //       case "/":
+  //         console.log("hey");
+  //         setNav(true);
+  //         setFooter(FooterHome);
+  //         break;
+  //       default:
+  //         setNav(true);
+  //         setFooter(FooterComponent);
+  //         break;
+  //     }
+  //   }
+  // }, [path]);
 
   return (
     <>
@@ -46,7 +93,10 @@ function MyApp({ Component, pageProps }) {
         <meta name="theme-color" content="#f0efeb" />
       </Head>
       <ProgressLoad />
+      {/* {<Navbar /> && Nav} */}
       <Component {...pageProps} />
+
+      {/* {Footer ? Footer : ""} */}
     </>
   );
 }
