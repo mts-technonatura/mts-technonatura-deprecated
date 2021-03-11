@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { loginBG } from "../assets/data/Gambar";
 
 export default function Login() {
@@ -69,28 +70,24 @@ export default function Login() {
                       >
                         Sign In
                       </button>
+                      <div className="flex flex-wrap mt-6">
+                        <div className="w-1/2">
+                          <Link href="forgot-password">
+                            <a>
+                              <small>Forgot password?</small>
+                            </a>
+                          </Link>
+                        </div>
+                        <div className="w-1/2 ">
+                          <Link href="signup">
+                            <a>
+                              <small>Create new account</small>
+                            </a>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </form>
-                </div>
-              </div>
-              <div className="flex flex-wrap mt-6">
-                <div className="w-1/2">
-                  <a
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    className="text-gray-300"
-                  >
-                    <small>Forgot password?</small>
-                  </a>
-                </div>
-                <div className="w-1/2 text-right">
-                  <a
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    className="text-gray-300"
-                  >
-                    <small>Create new account</small>
-                  </a>
                 </div>
               </div>
             </div>

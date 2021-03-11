@@ -14,9 +14,8 @@ export default function Navbar(): JSX.Element {
               </span>
             </h2>
             <p className="text-base text-gray-700 md:text-lg">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae. explicabo.
+              We are teenagers of MTs (Junior High School) Technonatura. We do
+              cool research, make product, build, ship, and deploy.
             </p>
           </div>
           <div>
@@ -82,13 +81,13 @@ export const Team: FC = () => {
         </div>
         <div className="flex flex-col justify-center p-8 bg-white lg:p-16 lg:pl-10 lg:w-1/2">
           <h5 className="mb-3 text-3xl font-extrabold leading-none sm:text-4xl">
-            See students
+            See the MTs Students
           </h5>
           <p className="mb-5 text-gray-800">
-            <span className="font-bold">Lorem ipsum</span> dolor sit amet,
-            consectetur adipiscing elit. Etiam sem neque, molestie sit amet
-            venenatis et, dignissim ut erat. Sed aliquet velit id dui eleifend,
-            sed consequat odio sollicitudin.
+            There are many students in{" "}
+            <span className="font-bold">MTs Technonatura</span> from 1st Junior
+            High School through the 3rd Junior High School. Each student have
+            their own interest. Want to find out more? Check the link below!
           </p>
           <div className="flex items-center">
             <button

@@ -14,7 +14,7 @@ export default function Hero(): JSX.Element {
           </span>
         </h1>
         <p className="w-full mx-auto text-base text-left text-gray-500 md:max-w-md sm:text-lg lg:text-2xl md:max-w-3xl md:text-center">
-          Award winning pages that will take your game to the next level!
+          Website of MTs Technonatura Depok Teenagers.
         </p>
         <div className="relative flex flex-col justify-center md:flex-row md:space-x-4">
           <Link href="/contact">
