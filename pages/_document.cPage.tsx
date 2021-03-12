@@ -61,11 +61,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <meta name="robots" content="index,follow" />
           <meta name="googlebot" content="index,follow" />
 
-          <meta name="og:url" content="https://MIT-JHS.github.io/" />
+          <meta name="geo.region" content="ID" />
+          <meta name="geo.placename" content="Depok, Jawa Barat" />
+          <link rel="shortlink" href={process.env.PUBLIC_URL} />
+          <link rel="canonical" href={process.env.PUBLIC_URL} />
+
+          <meta name="og:url" content={process.env.PUBLIC_URL} />
           <meta name="og:type" content="website" />
           <meta
             name="og:image"
-            content="https://MIT-JHS.github.io/open-graph/og-img-big.png"
+            content={`${process.env.PUBLIC_URL}/open-graph/og-img-big.png`}
           />
           <meta
             property="og:image:alt"
@@ -75,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <meta property="og:image:height" content="640" />
           <meta
             name="og:image"
-            content="https://MIT-JHS.github.io/open-graph/og-img-small.png"
+            content={`${process.env.PUBLIC_URL}/open-graph/og-img-small.png`}
           />
           <meta
             property="og:image:alt"
