@@ -10,9 +10,9 @@ import Navbar from "../components/navbar";
 import BlogSection from "../components/home/Blog";
 import { FooterHome } from "../components/footer";
 
-const title = "Mts Technonatura";
+const title = "Home | MTs TechnoNatura";
 const description =
-  "Website resmi Karya Remaja Mts Technonatura Depok. Karya-karya ini bermacam-macam, mulai dari computer-science, website, science, dll.s";
+  "Website resmi Remaja Madrasah Tsanawiyah TechnoNatura Depok. Website buatan para programmer MTs.";
 
 export default function Home() {
   return (

@@ -91,6 +91,15 @@ function MyApp({ Component, pageProps }: AppProps) {
           }
         />
         <meta name="theme-color" content="#f0efeb" />
+
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon.png"></link>
+
+        <title>Madrasah Tsanawiyah Techno Natura Depok</title>
+        <meta
+          name="description"
+          content="Website Madrasah Tsanawiyah Techno Natura"
+        />
       </Head>
       <ProgressLoad />
       {/* {<Navbar /> && Nav} */}
