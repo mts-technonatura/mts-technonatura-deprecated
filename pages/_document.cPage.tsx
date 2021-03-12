@@ -13,6 +13,17 @@ export default class Root extends Document {
     return (
       <Html lang="en">
         <Head>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MGMF2TJ');
+              `
+            }}
+          ></script>
           <link rel="icon" href={process.env.PUBLIC_URL + "/favicon.ico"} />
           <link
             rel="apple-touch-icon"
@@ -53,14 +64,6 @@ export default class Root extends Document {
           <meta name="og:url" content="https://MIT-JHS.github.io/" />
           <meta name="og:type" content="website" />
           <meta
-            name="og:title"
-            content="Website Madrasah Tsanawiyah Techno Natura"
-          />
-          <meta
-            name="og:description"
-            content="Website Madrasah Tsanawiyah Techno Natura"
-          />
-          <meta
             name="og:image"
             content="https://MIT-JHS.github.io/open-graph/og-img-big.png"
           />
@@ -90,6 +93,18 @@ export default class Root extends Document {
           <meta name="cannonical" content={process.env.PUBLIC_URL} />
         </Head>
         <body>
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: `
+            <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-MGMF2TJ"
+              height="0"
+              width="0"
+              style="display: none; visibility: hidden"
+            ></iframe>
+            `
+            }}
+          ></noscript>
           <Main />
           <NextScript />
         </body>
