@@ -13,6 +13,13 @@ export default class Root extends Document {
     return (
       <Html lang="en">
         <Head>
+          <meta charSet="utf-8" />
+
+          <script
+            type="text/javascript"
+            async
+            src="https://www.google-analytics.com/analytics.js"
+          ></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -20,7 +27,7 @@ export default class Root extends Document {
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MGMF2TJ');
+})(window,document,'script','dataLayer',${GA_TRACKING_ID});
               `
             }}
           ></script>
@@ -51,16 +58,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }}
           />
 
-          <meta charSet="utf-8" />
-
           <meta
             name="keywords"
             content="Madrasah Tsanawiyah Techno Natura, karya ilmiah remaja ,karya ilmiah remaja Madrasah Tsanawiyah Techno Natura, indonesia, madrasah, techno natura depok, madrasah tsanawiyah, madrasah tsanawiyah techno natura, madrasah tsanawiyah techno natura depok, MTs Technonatura, MTS Depok, MTS Techno, SMP Technonatura, smp technonatura, smp techno"
           />
-
-          <meta name="robots" content="index,follow" />
-          <meta name="googlebot" content="index,follow" />
-
           <meta name="geo.region" content="ID" />
           <meta name="geo.placename" content="Depok, Jawa Barat" />
           <link rel="shortlink" href={process.env.PUBLIC_URL} />
@@ -92,8 +93,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             property="og:site_name"
             content="Website Madrasah Tsanawiyah Techno Natura Depok"
           />
-
-          <link rel="canonical" href={process.env.PUBLIC_URL} />
 
           <meta name="cannonical" content={process.env.PUBLIC_URL} />
         </Head>
