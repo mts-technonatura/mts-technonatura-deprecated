@@ -14,7 +14,6 @@ export default class Root extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
-
           <script
             type="text/javascript"
             async
@@ -60,7 +59,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
           <meta
             name="keywords"
-            content="Madrasah Tsanawiyah Techno Natura, karya ilmiah remaja ,karya ilmiah remaja Madrasah Tsanawiyah Techno Natura, indonesia, madrasah, techno natura depok, madrasah tsanawiyah, madrasah tsanawiyah techno natura, madrasah tsanawiyah techno natura depok, MTs Technonatura, MTS Depok, MTS Techno, SMP Technonatura, smp technonatura, smp techno"
+            content="Madrasah Tsanawiyah Techno Natura,karya ilmiah remaja,karya ilmiah remaja Madrasah Tsanawiyah Techno Natura,indonesia,madrasah,techno natura depok,madrasah tsanawiyah,madrasah tsanawiyah techno natura,madrasah tsanawiyah techno natura depok,MTs Technonatura,MTS Depok,MTS Techno,SMP Technonatura,smp technonatura,smp techno"
           />
           <meta name="geo.region" content="ID" />
           <meta name="geo.placename" content="Depok, Jawa Barat" />
@@ -69,9 +68,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
           <meta name="og:url" content={process.env.PUBLIC_URL} />
           <meta name="og:type" content="website" />
+
           <meta
             name="og:image"
-            content={`${process.env.PUBLIC_URL}/open-graph/og-img-big.png`}
+            content={`${process.env.PUBLIC_URL}/open-graph/og-img-small.png`}
           />
           <meta
             property="og:image:alt"
@@ -79,10 +79,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
           <meta property="og:image:width" content="1280" />
           <meta property="og:image:height" content="640" />
-          <meta
-            name="og:image"
-            content={`${process.env.PUBLIC_URL}/open-graph/og-img-small.png`}
-          />
+
           <meta
             property="og:image:alt"
             content="Madrasah Tsanawiyah Techno Natura Log Open Graph Small Version"

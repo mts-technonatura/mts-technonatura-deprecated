@@ -3,6 +3,11 @@ const withCss = require("@zeit/next-css");
 const withPurgeCss = require("next-purgecss");
 const withPlugins = require("next-compose-plugins");
 const optimizedImages = require("next-optimized-images");
+const {
+  konversiHari,
+  konversiBulan,
+  timeConversion
+} = require("./utils/konversiWaktu");
 
 const NODE_ENV = process.env.NODE_ENV;
 const dualENV = {
@@ -13,6 +18,8 @@ const dualENV = {
     PUBLIC_URL: "http://localhost:3000"
   }
 };
+
+const getDate = new Date();
 
 const env = { ...dualENV[NODE_ENV], isProduction: NODE_ENV === "production" };
 
@@ -28,6 +35,27 @@ const nextConfig = {
     "_app.js",
     "_document.js"
   ],
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "If-Modified-Since",
+            value: `${konversiHari(
+              getDate.getDay()
+            )}, ${getDate.getDate()} ${konversiBulan(
+              getDate.getMonth()
+            )} ${getDate.getFullYear()} ${timeConversion(
+              getDate.getHours()
+            )}:${timeConversion(getDate.getMinutes())}:${timeConversion(
+              getDate.getSeconds()
+            )} GMT` // <day-name>, <day> <month> <year> <hour>:<minute>:<second> GMT | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since
+          }
+        ]
+      }
+    ];
+  },
   webpack: (config, { isServer }) => {
     if (isServer) {
       require("./scripts/sitemap-robots-generator")(env.PUBLIC_URL);

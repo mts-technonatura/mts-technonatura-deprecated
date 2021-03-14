@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { NextSeo } from "next-seo";
 
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
@@ -6,6 +7,16 @@ import Footer from "../components/footer";
 function contactPage() {
   return (
     <Fragment>
+      <NextSeo
+        title="Login | MTs TechnoNatura"
+        description="Website remaja MTs TechnoNatura"
+        canonical={process.env.PUBLIC_URL}
+        openGraph={{
+          url: process.env.PUBLIC_URL,
+          title: "Halaman Login - MTs TechnoNatura",
+          description: "Website buatan remaja MTs TechnoNatura"
+        }}
+      />
       <Navbar />
       <section className="text-gray-600 body-font relative">
         <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">

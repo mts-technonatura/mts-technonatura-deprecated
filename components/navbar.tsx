@@ -38,8 +38,8 @@ const Navbar: FC = () => {
             <li>
               <Link href="/about">
                 <a
-                  aria-label="Our product"
-                  title="Our product"
+                  aria-label="About"
+                  title="MTs TechnoNatura - About"
                   className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                 >
                   About
@@ -49,8 +49,8 @@ const Navbar: FC = () => {
             <li>
               <Link href="/blog">
                 <a
-                  aria-label="blog"
-                  title="blog"
+                  aria-label="MTs TechnoNatura - blog"
+                  title="MTs TechnoNatura - blog"
                   className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                 >
                   Blog
@@ -60,8 +60,8 @@ const Navbar: FC = () => {
             <li>
               <Link href="/news">
                 <a
-                  aria-label="News"
-                  title="News"
+                  aria-label="MTs TechnoNatura - News"
+                  title="MTs TechnoNatura - News"
                   className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                 >
                   News
@@ -71,8 +71,8 @@ const Navbar: FC = () => {
             <li>
               <Link href="/shop">
                 <a
-                  aria-label="About us"
-                  title="About us"
+                  aria-label="MTs TechnoNatura - About us"
+                  title="MTs TechnoNatura - About us"
                   className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                 >
                   Shops
@@ -85,8 +85,8 @@ const Navbar: FC = () => {
           <li>
             <Link href="/login">
               <a
-                aria-label="Sign in"
-                title="Sign in"
+                aria-label="MTs TechnoNatura - Login"
+                title="MTs TechnoNatura - Login"
                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
                 Sign in
@@ -97,8 +97,8 @@ const Navbar: FC = () => {
             <Link href="/signup">
               <a
                 className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                aria-label="Sign up"
-                title="Sign up"
+                aria-label="MTs TechnoNatura - Sign up"
+                title="MTs TechnoNatura - Sign up"
               >
                 Sign up
               </a>
@@ -178,34 +178,37 @@ const Navbar: FC = () => {
                 <nav>
                   <ul className="space-y-4">
                     <li>
-                      <a
-                        href="/"
-                        aria-label="Our product"
-                        title="Our product"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Product
-                      </a>
+                      <Link href="/about">
+                        <a
+                          aria-label="MTs TechnoNatura - About Page"
+                          title="MTs TechnoNatura - About Page"
+                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        >
+                          About
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/"
-                        aria-label="Our product"
-                        title="Our product"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Features
-                      </a>
+                      <Link href="/blog">
+                        <a
+                          aria-label="MTs TechnoNatura - Blog Page"
+                          title="MTs TechnoNatura - Blog Page"
+                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        >
+                          Blog
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/"
-                        aria-label="Product pricing"
-                        title="Product pricing"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Pricing
-                      </a>
+                      <Link href="/news">
+                        <a
+                          aria-label="MTs TechnoNatura - News Page"
+                          title="MTs TechnoNatura - News Page"
+                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        >
+                          News
+                        </a>
+                      </Link>
                     </li>
                     <li>
                       <a

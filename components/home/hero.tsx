@@ -35,7 +35,7 @@ export default function Hero(): JSX.Element {
               </svg>
             </a>
           </Link>
-          <Link href="about">
+          <Link href="/about">
             <a className="flex items-center px-6 py-3 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600">
               About Us
             </a>
@@ -43,7 +43,7 @@ export default function Hero(): JSX.Element {
         </div>
       </div>
       <div className="container items-center max-w-4xl px-5 mx-auto mt-16 text-center">
-        <img src={heroBG} />
+        <img src={heroBG} alt="MTs Techno Natura Hero Image" />
       </div>
     </section>
   );
