@@ -92,6 +92,10 @@ function MyApp({ Component, pageProps }: AppProps) {
             gtag.GOOGLE_VERIF || "pYKlXre7UF2sT8gpx6Nf8NKJLM0H5hkh80XIWEmO-yo"
           }
         />
+
+        <meta name="yandex-verification" content="356dad746d43cc34" />
+
+
         <meta name="theme-color" content="#f0efeb" />
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
