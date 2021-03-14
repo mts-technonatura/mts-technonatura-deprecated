@@ -1,29 +1,29 @@
 module.exports.konversiBulan = (moonInNum) => {
   switch (moonInNum) {
     case 0:
-      return "Januari";
+      return "Jan";
     case 1:
-      return "Februari";
+      return "Feb";
     case 2:
-      return "Maret";
+      return "March";
     case 3:
-      return "April";
+      return "Apr";
     case 4:
-      return "Mei";
+      return "May";
     case 5:
-      return "Juni";
+      return "Jun";
     case 6:
-      return "Juli";
+      return "Jul";
     case 7:
-      return "Agustus";
+      return "Aug";
     case 8:
-      return "September";
+      return "Sep";
     case 9:
-      return "Oktober";
+      return "Oct";
     case 10:
-      return "November";
+      return "Nov";
     case 11:
-      return "Desember";
+      return "Dec";
     default:
       break;
   }

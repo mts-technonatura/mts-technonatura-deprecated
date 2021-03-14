@@ -8,12 +8,12 @@ export default function Login() {
     <Fragment>
       <NextSeo
         title="Login | MTs TechnoNatura"
-        description="Website remaja MTs TechnoNatura"
+        description="Login member komunits MTs TechnoNatura"
         canonical={process.env.PUBLIC_URL}
         openGraph={{
           url: process.env.PUBLIC_URL,
           title: "Halaman Login - MTs TechnoNatura",
-          description: "Website buatan remaja MTs TechnoNatura"
+          description: "Login member komunits MTs TechnoNatura"
         }}
       />
 
