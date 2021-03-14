@@ -1,6 +1,8 @@
 import "tailwindcss/tailwind.css";
 
 import { useState } from "react";
+import { DefaultSeo } from "next-seo";
+import SEO from "../seo.config";
 
 import Head from "next/head";
 import { AppProps } from "next/app";
@@ -101,6 +103,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="Website Madrasah Tsanawiyah Techno Natura"
         />
       </Head>
+
+      <DefaultSeo {...SEO} />
+
       <ProgressLoad />
       {/* {<Navbar /> && Nav} */}
       <Component {...pageProps} />

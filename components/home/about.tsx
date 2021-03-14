@@ -40,12 +40,12 @@ export default function Navbar(): JSX.Element {
             <img
               className="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
               src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-              alt=""
+              alt="MTs TechnoNatura About Image"
             />
             <img
               className="object-cover w-20 h-20 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40"
               src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-              alt=""
+              alt="MTs TechnoNatura About Image"
             />
           </div>
           <div className="px-3">
@@ -68,7 +68,7 @@ export const Team: FC = () => {
         <div className="relative lg:w-1/2">
           <img
             src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-            alt=""
+            alt="MTs TechnoNatura Team Image"
             className="object-cover w-full lg:absolute h-80 lg:h-full"
           />
           <svg

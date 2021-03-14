@@ -22,25 +22,16 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
       </Head>
       <NextSeo
-        title={title}
-        description={description}
+        title="MTs TechnoNatura Website"
+        description="Website remaja MTs TechnoNatura"
         canonical={process.env.PUBLIC_URL}
         openGraph={{
           url: process.env.PUBLIC_URL,
-          title,
-          description,
-          type: "website",
-          images: [
-            {
-              url: `${process.env.PUBLIC_URL}/ogp-img.png`,
-              width: 256,
-              height: 256,
-              alt: "Mts Techno Natura Open Graph"
-            }
-          ],
-          site_name: "MTs Technonatura"
+          title: "MTs TechnoNatura Home Page",
+          description: "Website buatan remaja MTs TechnoNatura"
         }}
       />
+
       <style jsx global>{`
         html {
           font-family: "Roboto", sans-serif;
