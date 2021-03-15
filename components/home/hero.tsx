@@ -6,15 +6,14 @@ export default function Hero(): JSX.Element {
       <div className="container items-center max-w-6xl px-5 mx-auto space-y-6 text-center">
         <h1 className="text-4xl font-extrabold tracking-tight text-left text-gray-900 sm:text-5xl md:text-6xl md:text-center">
           <span className="block">
-            The{" "}
             <span className="block mt-1 text-deep-purple-accent-400 lg:inline lg:mt-0">
-              Junior High School{" "}
+              MTs TechnoNatura
             </span>
             Website
           </span>
         </h1>
         <p className="w-full mx-auto text-base text-left text-gray-500 md:max-w-md sm:text-lg lg:text-2xl md:max-w-3xl md:text-center">
-          Website of MTs Technonatura Depok Teenagers.
+          MTs Techno Natura website page.
         </p>
         <div className="relative flex flex-col justify-center md:flex-row md:space-x-4">
           <Link href="/contact">

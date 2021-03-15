@@ -8,13 +8,13 @@ function contactPage() {
   return (
     <Fragment>
       <NextSeo
-        title="Login | MTs TechnoNatura"
-        description="Website remaja MTs TechnoNatura"
+        title="Contact | MTs TechnoNatura"
+        description="Contact MTs TechnoNatura member to get more information about us."
         canonical={process.env.PUBLIC_URL}
         openGraph={{
           url: process.env.PUBLIC_URL,
-          title: "Halaman Login - MTs TechnoNatura",
-          description: "Website buatan remaja MTs TechnoNatura"
+          title: "Halaman Kontak - MTs TechnoNatura",
+          description: "Contact MTs TechnoNatura member to get more information about us."
         }}
       />
       <Navbar />
