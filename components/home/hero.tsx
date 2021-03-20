@@ -2,48 +2,73 @@ import Link from "next/link";
 import { heroBG } from "../../assets/data/Gambar";
 export default function Hero(): JSX.Element {
   return (
-    <section className="px-2 pt-32 bg-white md:px-0">
-      <div className="container items-center max-w-6xl px-5 mx-auto space-y-6 text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight text-left text-gray-900 sm:text-5xl md:text-6xl md:text-center">
-          <span className="block">
-            <span className="block mt-1 text-deep-purple-accent-400 lg:inline lg:mt-0">
-              MTs TechnoNatura
-            </span>
-            Website
-          </span>
-        </h1>
-        <p className="w-full mx-auto text-base text-left text-gray-500 md:max-w-md sm:text-lg lg:text-2xl md:max-w-3xl md:text-center">
-          MTs Techno Natura website page.
-        </p>
-        <div className="relative flex flex-col justify-center md:flex-row md:space-x-4">
-          <Link href="/contact">
-            <a className="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-deep-purple-accent-400 rounded-md md:mb-0 hover:bg-deep-purple-accent-200 md:w-auto">
-              Contact
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5 ml-1"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </Link>
-          <Link href="/about">
-            <a className="flex items-center px-6 py-3 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600">
-              About Us
-            </a>
-          </Link>
+    <div className="bg-gray-50 pt-12 lg:pt-20 pb-20 ">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-wrap -mx-4">
+          <div className="w-full lg:w-1/2 px-4 mb-12 md:mb-20 lg:mb-0 flex items-center">
+            <div className="w-full text-center lg:text-left">
+              <div className="max-w-md mx-auto lg:mx-0">
+                <h1 className="mb-3 text-4xl lg:text-5xl font-bold font-heading">
+                  MTs TechnoNatura
+                </h1>
+              </div>
+              <div className="max-w-sm mx-auto lg:mx-0">
+                <p className="mb-6 text-gray-400 leading-loose">
+                  Website remaja MTs TechnoNatura Depok
+                </p>
+                <div>
+                  <a
+                    className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-green-600 hover:bg-green-700 text-white font-semibold rounded-l-xl rounded-t-xl transition duration-200"
+                    href="#"
+                  >
+                    Contact Student
+                  </a>
+                  <a
+                    className="inline-block w-full lg:w-auto py-2 px-6 leading-loose font-semibold bg-white hover:bg-gray-50 rounded-l-xl rounded-t-xl transition duration-200"
+                    href="#"
+                  >
+                    Learn More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="w-full lg:w-1/2 px-4 flex items-center justify-center">
+            <div className="relative" style={{ zIndex: 0 }}>
+              <img
+                className="w-full max-w-lg object-cover rounded-3xl md:rounded-br-none"
+                style={{ height: "512px" }}
+                src="https://images.unsplash.com/photo-1462826303086-329426d1aef5?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80"
+                alt=""
+              />
+              <img
+                className="hidden md:block absolute"
+                style={{ top: "-2rem", right: "3rem", zIndex: -1 }}
+                src="https://shuffle.dev/atis-assets/elements/green-dark-up.svg"
+                alt=""
+              />
+              <img
+                className="hidden md:block absolute"
+                style={{ bottom: "-2rem", right: "-2rem", zIndex: -1 }}
+                src="https://shuffle.dev/atis-assets/elements/wing-green-down.svg"
+                alt=""
+              />
+              <img
+                className="hidden md:block absolute"
+                style={{ top: "3rem", right: "-3rem", zIndex: -1 }}
+                src="https://shuffle.dev/atis-assets/elements/bullets-gray-right.svg"
+                alt=""
+              />
+              <img
+                className="hidden md:block absolute"
+                style={{ bottom: "2.5rem", left: "-4.5rem", zIndex: -1 }}
+                src="https://shuffle.dev/atis-assets/elements/bullets-gray-left.svg"
+                alt=""
+              />
+            </div>
+          </div>
         </div>
       </div>
-      <div className="container items-center max-w-4xl px-5 mx-auto mt-16 text-center">
-        <img src={heroBG} alt="MTs Techno Natura Hero Image" />
-      </div>
-    </section>
+    </div>
   );
 }

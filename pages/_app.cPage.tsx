@@ -10,8 +10,6 @@ import { useEffect } from "react";
 import * as gtag from "../utils/gtag";
 import { useRouter } from "next/router";
 
-import FooterComponent, { FooterHome } from "../components/footer";
-import Navbar from "../components/navbar";
 import ProgressLoad from "../components/ProgressLoad";
 declare global {
   interface Window {
@@ -44,8 +42,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   let path: string = router.pathname;
-  let [Nav, setNav] = useState<boolean>();
-  let [Footer, setFooter] = useState<JSX.Element | boolean>(FooterComponent);
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
@@ -56,31 +52,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
-
-  // useEffect(() => {
-  // console.log(path);
-
-  //   const onIndex: number = doesntAlllowedNavAndFooter.findIndex(
-  //     (site) => site === path
-  //   );
-  //   console.log(onIndex);
-  //   if (onIndex !== -1) {
-  //     setNav(false);
-  //     setFooter(false);
-  //   } else {
-  //     switch (path) {
-  //       case "/":
-  //         console.log("hey");
-  //         setNav(true);
-  //         setFooter(FooterHome);
-  //         break;
-  //       default:
-  //         setNav(true);
-  //         setFooter(FooterComponent);
-  //         break;
-  //     }
-  //   }
-  // }, [path]);
 
   return (
     <>
@@ -94,7 +65,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
 
         <meta name="yandex-verification" content="356dad746d43cc34" />
-
 
         <meta name="theme-color" content="#f0efeb" />
 
@@ -113,8 +83,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ProgressLoad />
       {/* {<Navbar /> && Nav} */}
       <Component {...pageProps} />
-
-      {/* {Footer ? Footer : ""} */}
     </>
   );
 }

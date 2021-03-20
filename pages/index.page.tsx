@@ -6,9 +6,8 @@ import Head from "next/head";
 import AboutSection, { Team } from "../components/home/about";
 import Hero from "../components/home/hero";
 import EventsSection from "../components/home/eventsSection";
-import Navbar from "../components/navbar";
+import NavFoot from "../components/NavFoot";
 import BlogSection from "../components/home/Blog";
-import { FooterHome } from "../components/footer";
 
 const title = "Home | MTs TechnoNatura";
 const description =
@@ -38,13 +37,13 @@ export default function Home() {
           scroll-behavior: smooth;
         }
       `}</style>
-      <Navbar />
-      <Hero />
-      <AboutSection />
-      <Team />
-      <EventsSection />
-      <BlogSection />
-      <FooterHome />
+      <NavFoot>
+        <Hero />
+        <AboutSection />
+        <Team />
+        <EventsSection />
+        <BlogSection />
+      </NavFoot>
     </Fragment>
   );
 }
