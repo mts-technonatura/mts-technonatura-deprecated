@@ -17,98 +17,58 @@ export default function Login() {
         }}
       />
 
-      <main>
-        <section className="absolute w-full h-full">
-          <div
-            className="absolute top-0 w-full h-full bg-gray-900"
-            style={{
-              backgroundImage: `url(${loginBG})`,
-              backgroundSize: "100%",
-              backgroundRepeat: "no-repeat"
-            }}
-          ></div>
-          <div className="container mx-auto px-4 h-full">
-            <div className="flex content-center items-center justify-center h-full">
-              <div className="w-full sm:w-1/2  lg:w-4/12 px-4">
-                <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-indigo-50 border-0">
-                  <div className="flex-auto px-4 lg:px-10 py-10 pt-10">
-                    <form>
-                      <div className="relative w-full mb-3">
-                        <label
-                          className="block uppercase text-gray-700 text-xs font-bold mb-2"
-                          htmlFor="grid-password"
-                        >
-                          Email
-                        </label>
-                        <input
-                          type="email"
-                          className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-                          placeholder="Email"
-                          style={{ transition: "all .15s ease" }}
-                        />
-                      </div>
-
-                      <div className="relative w-full mb-3">
-                        <label
-                          className="block uppercase text-gray-700 text-xs font-bold mb-2"
-                          htmlFor="grid-password"
-                        >
-                          Password
-                        </label>
-                        <input
-                          type="password"
-                          className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-                          placeholder="Password"
-                          style={{ transition: "all .15s ease" }}
-                        />
-                      </div>
-                      <div>
-                        <label className="inline-flex items-center cursor-pointer">
-                          <input
-                            id="customCheckLogin"
-                            type="checkbox"
-                            className="form-checkbox text-gray-800 ml-1 w-5 h-5"
-                            style={{ transition: "all .15s ease" }}
-                          />
-                          <span className="ml-2 text-sm font-semibold text-gray-700">
-                            Remember me
-                          </span>
-                        </label>
-                      </div>
-
-                      <div className="text-center mt-6">
-                        <button
-                          className="btn bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
-                          type="button"
-                          style={{ transition: "all .15s ease" }}
-                        >
-                          Sign In
-                        </button>
-                        <div className="flex flex-wrap mt-6">
-                          <div className="w-1/2">
-                            <Link href="/forgot-password">
-                              <a>
-                                <small>Forgot password?</small>
-                              </a>
-                            </Link>
-                          </div>
-                          <div className="w-1/2 ">
-                            <Link href="/signup">
-                              <a>
-                                <small>Create new account</small>
-                              </a>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <section class="bg-purple-900">
+        <div class="px-0 py-20 mx-auto max-w-7xl sm:px-4">
+          <div class="w-full px-4 pt-5 pb-6 mx-auto mt-8 mb-6 bg-white rounded-none shadow-xl sm:rounded-lg sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12 sm:px-6">
+            <h1 class="mb-4 text-lg font-semibold text-left text-gray-900">
+              Log in to your account
+            </h1>
+            <form class="mb-8 space-y-4">
+              <label class="block">
+                <span class="block mb-1 text-xs font-medium text-gray-700">
+                  Your Email
+                </span>
+                <input
+                  class="form-input"
+                  type="email"
+                  placeholder="Ex. james@bond.com"
+                  inputmode="email"
+                  required
+                />
+              </label>
+              <label class="block">
+                <span class="block mb-1 text-xs font-medium text-gray-700">
+                  Your Password
+                </span>
+                <input
+                  class="form-input"
+                  type="password"
+                  placeholder="••••••••"
+                  required
+                />
+              </label>
+              <input
+                type="submit"
+                class="w-full py-3 mt-1 btn btn-primary"
+                value="Login"
+              />
+            </form>
           </div>
-        </section>
-      </main>
+          <p class="mb-4 text-xs text-center text-gray-400">
+            <a href="#" class="text-purple-200 underline hover:text-white">
+              Create an account
+            </a>
+            ·
+            <a href="#" class="text-purple-200 underline hover:text-white">
+              Forgot password
+            </a>
+            ·
+            <a href="#" class="text-purple-200 underline hover:text-white">
+              Privacy & Terms
+            </a>
+          </p>
+        </div>
+      </section>
     </Fragment>
   );
 }
