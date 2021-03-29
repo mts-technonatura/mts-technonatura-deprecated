@@ -17,31 +17,30 @@ export default function Login() {
         }}
       />
 
-      <section class="bg-purple-900">
-        <div class="px-0 py-20 mx-auto max-w-7xl sm:px-4">
-          <div class="w-full px-4 pt-5 pb-6 mx-auto mt-8 mb-6 bg-white rounded-none shadow-xl sm:rounded-lg sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12 sm:px-6">
-            <h1 class="mb-4 text-lg font-semibold text-left text-gray-900">
+      <section className="bg-purple-900">
+        <div className="px-0 py-20 mx-auto max-w-7xl sm:px-4">
+          <div className="w-full px-4 pt-5 pb-6 mx-auto mt-8 mb-6 bg-white rounded-none shadow-xl sm:rounded-lg sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12 sm:px-6">
+            <h1 className="mb-4 text-lg font-semibold text-left text-gray-900">
               Log in to your account
             </h1>
-            <form class="mb-8 space-y-4">
-              <label class="block">
-                <span class="block mb-1 text-xs font-medium text-gray-700">
+            <form className="mb-8 space-y-4">
+              <label className="block">
+                <span className="block mb-1 text-xs font-medium text-gray-700">
                   Your Email
                 </span>
                 <input
-                  class="form-input"
+                  className="form-input"
                   type="email"
                   placeholder="Ex. james@bond.com"
-                  inputmode="email"
                   required
                 />
               </label>
-              <label class="block">
-                <span class="block mb-1 text-xs font-medium text-gray-700">
+              <label className="block">
+                <span className="block mb-1 text-xs font-medium text-gray-700">
                   Your Password
                 </span>
                 <input
-                  class="form-input"
+                  className="form-input"
                   type="password"
                   placeholder="••••••••"
                   required
@@ -49,21 +48,21 @@ export default function Login() {
               </label>
               <input
                 type="submit"
-                class="w-full py-3 mt-1 btn btn-primary"
+                className="w-full py-3 mt-1 btn btn-primary"
                 value="Login"
               />
             </form>
           </div>
-          <p class="mb-4 text-xs text-center text-gray-400">
-            <a href="#" class="text-purple-200 underline hover:text-white">
+          <p className="mb-4 text-xs text-center text-gray-400">
+            <a href="#" className="text-purple-200 underline hover:text-white">
               Create an account
             </a>
             ·
-            <a href="#" class="text-purple-200 underline hover:text-white">
+            <a href="#" className="text-purple-200 underline hover:text-white">
               Forgot password
             </a>
             ·
-            <a href="#" class="text-purple-200 underline hover:text-white">
+            <a href="#" className="text-purple-200 underline hover:text-white">
               Privacy & Terms
             </a>
           </p>
