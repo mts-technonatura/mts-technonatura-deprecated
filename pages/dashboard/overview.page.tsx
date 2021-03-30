@@ -1,5 +1,7 @@
 import FooterHome from "../../components/footer";
 import Link from "next/link";
+import {} from "../../assets/data/Gambar";
+// import {} from '@/components';
 export default function DashboardOverview() {
   return (
     <>
@@ -104,7 +106,7 @@ export default function DashboardOverview() {
                   Try Now
                 </a>
                 <a
-                  className="block sm:inline-block py-4 px-8 text-xs text-blueGray-500 hover:text-blueGray-600 text-center font-semibold leading-none bg-white rounded"
+                  className="block sm:inline-block py-4 px-8 text-xs text-blueGray-500 hover:text-blueGray-600 text-center font-semibold leading-none bg-blueGray-50 rounded"
                   href="#"
                 >
                   Documentation
@@ -136,7 +138,7 @@ export default function DashboardOverview() {
                 >
                   <img
                     className="h-10"
-                    src="/metis-assets/logos/metis/metis.svg"
+                    src="/favicon.ico"
                     alt=""
                     width="auto"
                   />
