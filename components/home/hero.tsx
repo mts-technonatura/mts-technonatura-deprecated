@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { heroBG } from "../../assets/data/Gambar";
+import Image from "next/image";
+import { heroBG, photoBareng } from "../../assets/data/Gambar";
+
 export default function Hero(): JSX.Element {
   return (
     <div className="bg-gray-50 pt-12 lg:pt-20 pb-20 ">
@@ -35,10 +37,11 @@ export default function Hero(): JSX.Element {
           </div>
           <div className="w-full lg:w-1/2 px-4 flex items-center justify-center">
             <div className="relative" style={{ zIndex: 0 }}>
-              <img
+              <Image
                 className="w-full max-w-lg object-cover rounded-3xl md:rounded-br-none"
-                style={{ height: "512px" }}
-                src="https://images.unsplash.com/photo-1462826303086-329426d1aef5?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80"
+                height="512px"
+                width="800px"
+                src={photoBareng}
                 alt=""
               />
               <img

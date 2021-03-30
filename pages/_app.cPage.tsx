@@ -1,16 +1,22 @@
 import "tailwindcss/tailwind.css";
+import { ThemeProvider, useTheme } from "@material-ui/core/styles";
 
-import { useState } from "react";
+/* Important Scripts */
 import { DefaultSeo } from "next-seo";
-import SEO from "../seo.config";
-
 import Head from "next/head";
 import { AppProps } from "next/app";
-import { useEffect } from "react";
-import * as gtag from "../utils/gtag";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+/* Important Scripts */
 
+/* Additional Scripts */
+import * as gtag from "../utils/gtag";
+import SEO from "../seo.config";
+/* Additional Scripts */
+
+/* Components */
 import ProgressLoad from "../components/ProgressLoad";
+/* Components */
 declare global {
   interface Window {
     gtag: (event: string, name: any, obj: object) => void;
@@ -40,6 +46,7 @@ const doesntAlllowedNavAndFooter: string[] = [
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  const theme = useTheme();
 
   let path: string = router.pathname;
 
@@ -78,11 +85,13 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
 
-      <DefaultSeo {...SEO} />
+      <ThemeProvider theme={theme}>
+        <DefaultSeo {...SEO} />
 
-      <ProgressLoad />
-      {/* {<Navbar /> && Nav} */}
-      <Component {...pageProps} />
+        <ProgressLoad />
+        {/* {<Navbar /> && Nav} */}
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }
