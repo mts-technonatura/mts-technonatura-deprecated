@@ -56,11 +56,6 @@ const nextConfig = {
       }
     ];
   },
-  images: {
-    loader: "cloudinary",
-    path:
-      "https://res.cloudinary.com/dsg8ufk2s/image/upload/v1617203011/download_2_furxok.jpg"
-  },
   webpack: (config, { isServer }) => {
     if (isServer) {
       require("./scripts/sitemap-robots-generator")(env.PUBLIC_URL);

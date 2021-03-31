@@ -1,33 +1,72 @@
 import { FC } from "react";
 import Image from "next/image";
-import { aklimatisasi } from "../../assets/data/Gambar";
+import {
+  aklimatisasi,
+  madinah1,
+  madinah2,
+  madinah3,
+  makkah1,
+  makkah2,
+  makkah3
+} from "../../assets/data/Gambar";
 
 export default function AboutSection(): JSX.Element {
   return (
-    <section className="flex items-center justify-center py-10 text-white bg-white sm:py-16 md:py-24 lg:py-32">
-      <div className="relative max-w-3xl px-10 text-center text-white auto lg:px-0">
-        <div className="flex flex-col w-full md:flex-row">
-          <div className="flex justify-between">
-            <h1 className="relative flex flex-col text-6xl font-extrabold text-left text-black">
-              We Create
-              <span>Things.</span>
-            </h1>
-          </div>
-          <div className="relative top-0 right-0 h-64 mt-12 md:-mt-16 md:absolute md:h-96">
+    <section className="py-12 md:py-20">
+      <div className="container px-4 mx-auto">
+        <div className="max-w-lg mx-auto mb-12 text-center">
+          <span className="inline-block py-1 px-3 text-xs font-semibold bg-green-100 text-green-600 rounded-xl">
+            About MTs TechnoNatura
+          </span>
+          <h2 className="text-3xl md:text-4xl mt-2 mb-4 font-bold font-heading">
+            Great students start here.
+          </h2>
+          <p className="text-blueGray-400 leading-loose">
+            do you know? and blablabla bla, and MTs TechnoNatura is blabla bla
+          </p>
+        </div>
+        <div className="flex flex-wrap lg:flex-nowrap lg:items-center max-w-lg lg:max-w-full mx-auto">
+          <div className="w-full lg:w-1/4 p-3">
             <img
-              src={aklimatisasi}
-              className="object-cover mt-3 mr-5 h-80 lg:h-96"
+              className="rounded object-cover mx-auto"
+              src={madinah2}
+              alt=""
+            />
+          </div>
+          <div className="w-full lg:w-2/4 flex flex-col">
+            <div className="flex items-end">
+              <div className="w-2/3 p-3">
+                <img className="rounded object-cover" src={madinah1} alt="" />
+              </div>
+              <div className="w-1/3 p-3">
+                <img
+                  className="h-48 w-full lg:h-32 rounded object-cover"
+                  src={madinah3}
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="w-1/3 p-3">
+                <img
+                  className="h-48 lg:h-32 rounded object-cover"
+                  src={makkah1}
+                  alt=""
+                />
+              </div>
+              <div className="w-2/3 p-3">
+                <img className="rounded object-cover" src={makkah2} alt="" />
+              </div>
+            </div>
+          </div>
+          <div className="w-full lg:w-1/4 p-3">
+            <img
+              className="rounded object-cover mx-auto"
+              src={makkah3}
+              alt=""
             />
           </div>
         </div>
-
-        <div className="my-16 border-b border-gray-300 lg:my-24"></div>
-
-        <h2 className="text-left text-gray-500 xl:text-xl">
-          Building beautiful designs for your next project. We've unlocked the
-          secret to converting visitors into customers. Download our re-usable
-          and extandable components today.
-        </h2>
       </div>
     </section>
   );

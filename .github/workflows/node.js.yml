@@ -32,7 +32,7 @@ jobs:
       run: yarn build
       env:
         NEXT_PUBLIC_BASE_PATH: /mts-technonatura
-    - run: yarn start
+    - run: yarn export
       env:
         NEXT_PUBLIC_BASE_PATH: /mts-technonatura
     - run: touch ./out/.nojekyll

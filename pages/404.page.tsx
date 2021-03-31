@@ -19,7 +19,7 @@ const NotFound = () => {
             But dont worry, you can find plenty of other things on our homepage.
           </p>
           <Link href="/">
-            <a className="btn px-8 py-3 font-semibold rounded bg-violet-400 dark:text-coolGray-900">
+            <a className="btn px-8 py-3 font-semibold rounded bg-green-200  text-green-700 dark:text-coolGray-900">
               Back to homepage
             </a>
           </Link>

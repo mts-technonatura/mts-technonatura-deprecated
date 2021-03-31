@@ -2,6 +2,13 @@ const heroBG = require("../Img/normal/hero.png");
 const loginBG = require("../Img/normal/login.png");
 const photoBareng = require("../Img/photoBareng.jpeg");
 const aklimatisasi = require("../Img/aklimatisasi.jpeg");
+const madinah1 = require("../Img/madinah1.jpeg");
+const madinah2 = require("../Img/madinah2.jpeg");
+const madinah3 = require("../Img/madinah3.jpeg");
+
+const makkah1 = require("../Img/makkah1.jpeg");
+const makkah2 = require("../Img/makkah2.jpeg");
+const makkah3 = require("../Img/makkah3.jpeg");
 
 /* Backgrounds */
 const waveGrey = require("../Img/metis-assets/backgrounds/wave-grey.png");
@@ -85,5 +92,11 @@ module.exports = {
   loginBG,
   photoBareng,
   metisAssets,
-  aklimatisasi
+  aklimatisasi,
+  madinah1,
+  madinah2,
+  madinah3,
+  makkah1,
+  makkah2,
+  makkah3
 };
