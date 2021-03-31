@@ -24,7 +24,7 @@ const useStyles = makeStyles({
 });
 
 const Navbar: FC = () => {
-  const [drawer, setDrawer] = useState<boolean>(true);
+  const [drawer, setDrawer] = useState<boolean>(false);
   const classes = useStyles();
 
   const Router = useRouter();
@@ -84,14 +84,16 @@ const Navbar: FC = () => {
       <section>
         <nav className="relative py-6 bg-white">
           <div className="container mx-auto px-4 flex justify-between items-center">
-            <a className="text-3xl font-bold leading-none" href="#">
-              <img
-                className="h-12"
-                src="/favicon.ico"
-                alt="MTs TechnoNatura Logo"
-                width="auto"
-              />
-            </a>
+            <Link href="/">
+              <a className="text-3xl font-bold leading-none">
+                <img
+                  className="h-12"
+                  src="/favicon.ico"
+                  alt="MTs TechnoNatura Logo"
+                  width="auto"
+                />
+              </a>
+            </Link>
             <div className="lg:hidden">
               <button
                 onClick={toggleDrawer}
@@ -104,12 +106,11 @@ const Navbar: FC = () => {
             </div>
             <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
               <li>
-                <a
-                  className="text-sm text-green-600 font-bold hover:text-gray-500"
-                  href="#"
-                >
-                  Home
-                </a>
+                <Link href="/">
+                  <a className="text-sm text-green-600 font-bold hover:text-gray-500">
+                    Home
+                  </a>
+                </Link>
               </li>
               <li className="text-gray-300">
                 <svg
@@ -128,9 +129,9 @@ const Navbar: FC = () => {
                 </svg>
               </li>
               <li>
-                <a className="text-sm text-gray-400 " href="#">
-                  Projects
-                </a>
+                <Link href="/projects">
+                  <a className="text-sm text-gray-400 ">Projects</a>
+                </Link>
               </li>
               <li className="text-gray-300">
                 <svg
@@ -149,12 +150,11 @@ const Navbar: FC = () => {
                 </svg>
               </li>
               <li>
-                <a
-                  className="text-sm text-gray-400 hover:text-gray-500"
-                  href="#"
-                >
-                  About
-                </a>
+                <Link href="/about">
+                  <a className="text-sm text-gray-400 hover:text-gray-500">
+                    About
+                  </a>
+                </Link>
               </li>
               <li className="text-gray-300">
                 <svg
@@ -173,12 +173,11 @@ const Navbar: FC = () => {
                 </svg>
               </li>
               <li>
-                <a
-                  className="text-sm text-gray-400 hover:text-gray-500"
-                  href="#"
-                >
-                  Blog
-                </a>
+                <Link href="/blog">
+                  <a className="text-sm text-gray-400 hover:text-gray-500">
+                    Blog
+                  </a>
+                </Link>
               </li>
               <li className="text-gray-300">
                 <svg
@@ -197,26 +196,21 @@ const Navbar: FC = () => {
                 </svg>
               </li>
               <li>
-                <a
-                  className="text-sm text-gray-400 hover:text-gray-500"
-                  href="#"
-                >
+                <a className="text-sm text-gray-400 hover:text-gray-500">
                   Shop
                 </a>
               </li>
             </ul>
-            <a
-              className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-l-xl rounded-t-xl transition duration-200"
-              href="#"
-            >
-              Sign In
-            </a>
-            <a
-              className="hidden lg:inline-block py-2 px-6 bg-green-500 hover:bg-green-600 text-sm text-white font-bold rounded-l-xl rounded-t-xl transition duration-200"
-              href="#"
-            >
-              Sign up
-            </a>
+            <Link href="/login">
+              <a className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-l-xl rounded-t-xl transition duration-200">
+                Sign In
+              </a>
+            </Link>
+            <Link href="/signup">
+              <a className="hidden lg:inline-block py-2 px-6 bg-green-500 hover:bg-green-600 text-sm text-white font-bold rounded-l-xl rounded-t-xl transition duration-200">
+                Sign up
+              </a>
+            </Link>
           </div>
         </nav>
       </section>
