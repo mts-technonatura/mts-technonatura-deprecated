@@ -29,10 +29,10 @@ jobs:
       run: yarn install
 
     - name: Build my App  
-      run: yarn build
-      env:
-        NEXT_PUBLIC_BASE_PATH: /mts-technonatura
-    - run: yarn export
+      run: yarn start
+#       env:
+#         NEXT_PUBLIC_BASE_PATH: /mts-technonatura
+#     - run: yarn export
       env:
         NEXT_PUBLIC_BASE_PATH: /mts-technonatura
     - run: touch ./out/.nojekyll
