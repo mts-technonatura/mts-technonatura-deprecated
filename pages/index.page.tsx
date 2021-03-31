@@ -39,7 +39,6 @@ export default function Home() {
       `}</style>
       <NavFoot>
         <Hero />
-        <AboutSection />
         <Team />
         <EventsSection />
         <BlogSection />

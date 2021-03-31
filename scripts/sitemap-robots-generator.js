@@ -9,10 +9,10 @@ module.exports = async function (domain) {
   const prettierConfig = await prettier.resolveConfig(
     resolve(".prettierrc.json")
   );
-  const postsIgnore = fs
-    .readFileSync(resolve("posts/.gitignore"), "utf8")
-    .split("\n")
-    .map((post) => "!posts/" + post);
+  // const postsIgnore = fs
+  //   .readFileSync(resolve("posts/.gitignore"), "utf8")
+  //   .split("\n")
+  //   .map((post) => "!posts/" + post);
 
   const date = new Date().toJSON();
 
@@ -22,7 +22,7 @@ module.exports = async function (domain) {
     "!pages/_*.js",
     "!pages/api"
   ]);
-  const posts = await globby(["posts/*.md", ...postsIgnore]);
+  // const posts = await globby(["posts/*.md", ...postsIgnore]);
 
   const sitemap = `
       <?xml version="1.0" encoding="UTF-8"?>
@@ -38,18 +38,6 @@ module.exports = async function (domain) {
               return `
                 <url>
                   <loc>${`${domain}${route}`}</loc>
-                  <lastmod>${date}</lastmod>
-                </url>
-              `;
-            })
-            .join("")}
-          ${posts
-            .map((post) => {
-              const path = post.replace("posts/", "").replace(".md", "");
-
-              return `
-                <url>
-                  <loc>${`${domain}/blog/${path}`}</loc>
                   <lastmod>${date}</lastmod>
                 </url>
               `;

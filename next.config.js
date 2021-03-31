@@ -12,7 +12,7 @@ const {
 const NODE_ENV = process.env.NODE_ENV;
 const dualENV = {
   production: {
-    PUBLIC_URL: "https://mts-technonatura.vercel.app"
+    PUBLIC_URL: process.env.PUBLIC_URL
   },
   development: {
     PUBLIC_URL: "http://localhost:3000"
@@ -55,6 +55,11 @@ const nextConfig = {
         ]
       }
     ];
+  },
+  images: {
+    loader: "cloudinary",
+    path:
+      "https://res.cloudinary.com/dsg8ufk2s/image/upload/v1617203011/download_2_furxok.jpg"
   },
   webpack: (config, { isServer }) => {
     if (isServer) {
