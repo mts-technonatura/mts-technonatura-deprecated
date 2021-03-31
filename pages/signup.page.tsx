@@ -30,9 +30,9 @@ export default function signup() {
         }}
       />
       <section>
-        <div className="flex flex-wrap">
-          <div className="pt-6 lg:pt-16 pb-6 w-full lg:w-1/2">
-            <div className="max-w-md mx-auto">
+        <div className="flex flex-wrap h-screen">
+          <div className="pt-6 lg:pt-16 pb-6 w-full lg:w-1/2 flex-col justify-center items-center content-center">
+            <div className="max-w-md m-auto ">
               <div className="mb-6 lg:mb-20 w-full px-3 flex items-center justify-between">
                 <Link href="/">
                   <a className="text-3xl font-bold leading-none">

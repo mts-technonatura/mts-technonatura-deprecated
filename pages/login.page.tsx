@@ -1,9 +1,44 @@
-import Link from "next/link";
-import { Fragment } from "react";
 import { loginBG } from "../assets/data/Gambar";
 import { NextSeo } from "next-seo";
 
+import React, { Fragment } from "react";
+import Avatar from "@material-ui/core/Avatar";
+import Button from "@material-ui/core/Button";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import TextField from "@material-ui/core/TextField";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import Link from "@material-ui/core/Link";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    marginTop: theme.spacing(8),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main
+  },
+  form: {
+    width: "100%", // Fix IE 11 issue.
+    marginTop: theme.spacing(1)
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2)
+  }
+}));
+
 export default function Login() {
+  const classes = useStyles();
+
   return (
     <Fragment>
       <NextSeo
@@ -17,53 +52,82 @@ export default function Login() {
         }}
       />
 
-      <section className="relative py-20">
-        <div className="absolute top-0 left-0 lg:bottom-0 h-112 lg:h-auto w-full lg:w-8/12 bg-gray-500"></div>
-        <div className="relative container px-4 mx-auto">
-          <div className="flex flex-wrap items-center -mx-4">
-            <div className="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
-              <div className="max-w-md">
-                <h2 className="mb-6 text-4xl lg:text-5xl font-bold text-white">
-                  Lorem ipsum dolor sit amet consectutar domor at elis
-                </h2>
-                <p className="text-gray-50 lg:pr-10 leading-loose">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Pellentesque massa nibh, pulvinar vitae aliquet nec, accumsan
-                  aliquet orci.
-                </p>
-              </div>
-            </div>
-            <div className="w-full lg:w-1/2 px-4">
-              <div className="lg:max-w-md p-6 bg-gray-50 text-center rounded-lg">
-                <form action="#">
-                  <span className="text-sm text-gray-500 font-semibold uppercase">
-                    Sign In
-                  </span>
-                  <h3 className="mb-8 text-2xl font-bold font-heading">
-                    Join our community
-                  </h3>
-                  <input
-                    className="w-full py-3 pl-3 mb-4 bg-white rounded-lg"
-                    type="email"
-                    placeholder="E-mail address"
-                  />
-                  <input
-                    className="w-full py-3 pl-3 mb-4 bg-white rounded-lg"
-                    type="password"
-                    placeholder="Password"
-                  />
-                  <button className="w-full inline-block px-6 py-3 mb-4 text-sm text-white font-bold leading-loose bg-gray-500 hover:bg-gray-600 rounded transition duration-200">
-                    Get Started
-                  </button>
-                  <a className="text-sm text-gray-500 hover:underline" href="#">
-                    Forgot password?
-                  </a>
-                </form>
-              </div>
-            </div>
-          </div>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" align="center" variant="h5">
+            Sign in to MTs TechnoNatura Account
+          </Typography>
+          <form className={classes.form} noValidate>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="username"
+              label="username"
+              name="text"
+              autoComplete="off"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              Sign In
+            </Button>
+            <Grid container>
+              {/* <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
+                </Link>
+              </Grid> */}
+              <Grid item>
+                <Link href="/signup" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
+            </Grid>
+          </form>
         </div>
-      </section>
+        <Box mt={8}>
+          <Copyright />
+        </Box>
+      </Container>
     </Fragment>
+  );
+}
+
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {"Copyright © "}
+      <Link color="inherit" href="https://mts-tn.vercel.app/">
+        MTs TechnoNatura
+      </Link>{" "}
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
   );
 }

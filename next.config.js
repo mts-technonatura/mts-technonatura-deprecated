@@ -12,7 +12,7 @@ const {
 const NODE_ENV = process.env.NODE_ENV;
 const dualENV = {
   production: {
-    PUBLIC_URL: process.env.PUBLIC_URL
+    PUBLIC_URL: "https://mts-tn.vercel.app"
   },
   development: {
     PUBLIC_URL: "http://localhost:3000"
