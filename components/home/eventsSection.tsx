@@ -1,94 +1,100 @@
 export default function () {
   return (
-    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-      <div className="flex flex-col mb-6 lg:justify-between lg:flex-row md:mb-8">
-        <h2 className="max-w-lg mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none md:mb-6 group">
-          <span className="inline-block mb-1 sm:mb-4">
-            The MTs Technonatura
-            <br className="hidden md:block" />
-            Events.
-          </span>
-          <div className="h-1 ml-auto duration-300 origin-left transform bg-deep-purple-accent-400 scale-x-30 group-hover:scale-x-100" />
+    <section className="py-20 bg-blueGray-50">
+      <div className="container px-4 mx-auto">
+        <h2 className="mb-12 lg:mb-20 text-3xl md:text-4xl font-bold font-heading">
+          MTs TechnoNatura Events
         </h2>
-        <p className="text-gray-700 lg:text-sm lg:max-w-md">
-          "Sometimes we do a video live streaming during special event such as
-          Science Exhibition, Robotic Event."
-        </p>
-      </div>
-      <div className="grid gap-6 row-gap-5 mb-8 lg:grid-cols-4 sm:row-gap-6 sm:grid-cols-2">
-        <a href="/" aria-label="View Item">
-          <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
+        <div className="flex flex-wrap -mx-4 mb-20">
+          <div className="w-full lg:w-1/2 px-4 lg:pr-20 lg:pt-4 order-1 lg:order-0">
+            <span className="inline-block py-1 px-3 uppercase text-xs font-semibold bg-blue-50 rounded-full text-blue-600">
+              Science
+            </span>
+            <h3 className="my-4 text-xl md:text-2xl font-bold font-heading">
+              Science Exhibition 2020
+            </h3>
+            <p className="mb-4 text-sm md:text-base leading-loose text-blueGray-400">
+              Aenean tempus orci eu est ultrices hendrerit. Fusce suscipit, leo
+              a semper venenatis, felis urna pulvinar nibh, vitae porta erat
+              risus sed mauris. Vestibulum vehicula leo eget libero eleifend,
+              quis dictum eros bibendum. Maecenas convallis tempor varius.
+            </p>
+            <a className="text-xs font-semibold text-blue-600" href="#">
+              <span>Read More</span>
+              <svg
+                className="inline-block w-4 h-4 ml-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                ></path>
+              </svg>
+            </a>
+          </div>
+          <div className="w-full lg:w-1/2 px-4 mb-8 order-0 lg:order-1">
             <img
-              className="object-cover w-full h-56 md:h-64 xl:h-80"
-              src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              className="w-full h-80 object-cover rounded"
+              src="https://images.unsplash.com/photo-1603050927325-baf630505e27?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjExMDk0fQ&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
               alt=""
             />
-            <div className="absolute inset-x-0 bottom-0 px-6 py-4 bg-black bg-opacity-75">
-              <p className="text-sm font-medium tracking-wide text-white">
-                Sed ut perspiciatis unde omnis iste natus error
-              </p>
-            </div>
           </div>
-        </a>
-        <a href="/" aria-label="View Item">
-          <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
+        </div>
+        <div className="flex flex-wrap -mx-4 mb-20">
+          <div className="w-full lg:w-1/2 px-4 lg:pl-20 lg:pt-4 order-1">
+            <span className="inline-block py-1 px-3 uppercase text-xs font-semibold bg-blue-50 rounded-full text-blue-600">
+              Robotic
+            </span>
+            <h3 className="my-4 text-xl md:text-2xl font-bold font-heading">
+              FTC 2021 Competition
+            </h3>
+            <p className="mb-4 text-sm md:text-base leading-loose text-blueGray-400">
+              Aenean tempus orci eu est ultrices hendrerit. Fusce suscipit, leo
+              a semper venenatis, felis urna pulvinar nibh, vitae porta erat
+              risus sed mauris. Vestibulum vehicula leo eget libero eleifend,
+              quis dictum eros bibendum. Maecenas convallis tempor varius.
+            </p>
+            <a className="text-xs font-semibold text-blue-600" href="#">
+              <span>Read More</span>
+              <svg
+                className="inline-block w-4 h-4 ml-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                ></path>
+              </svg>
+            </a>
+          </div>
+          <div className="w-full lg:w-1/2 px-4 mb-8 order-0">
             <img
-              className="object-cover w-full h-56 md:h-64 xl:h-80"
-              src="https://images.pexels.com/photos/3182750/pexels-photo-3182750.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              className="w-full h-80 object-cover rounded"
+              src="https://images.unsplash.com/photo-1603665270146-bbdf9858ea55?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80"
               alt=""
             />
-            <div className="absolute inset-x-0 bottom-0 px-6 py-4 bg-black bg-opacity-75">
-              <p className="text-sm font-medium tracking-wide text-white">
-                Leverage agile frameworks to provide a robust synopsis
-              </p>
-            </div>
           </div>
-        </a>
-        <a href="/" aria-label="View Item">
-          <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
-            <img
-              className="object-cover w-full h-56 md:h-64 xl:h-80"
-              src="https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-              alt=""
-            />
-            <div className="absolute inset-x-0 bottom-0 px-6 py-4 bg-black bg-opacity-75">
-              <p className="text-sm font-medium tracking-wide text-white">
-                Dingy I'm tellin' you rhubaahb Bangah Jo-Jeezly
-              </p>
-            </div>
-          </div>
-        </a>
-        <a href="/" aria-label="View Item">
-          <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
-            <img
-              className="object-cover w-full h-56 md:h-64 xl:h-80"
-              src="https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-              alt=""
-            />
-            <div className="absolute inset-x-0 bottom-0 px-6 py-4 bg-black bg-opacity-75">
-              <p className="text-sm font-medium tracking-wide text-white">
-                Rough pomfret lemon shark plownose chimaera
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div className="text-center">
-        <a
-          href="/"
-          aria-label=""
-          className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
-        >
-          See more
-          <svg
-            className="inline-block w-3 ml-2"
-            fill="currentColor"
-            viewBox="0 0 12 12"
+        </div>
+
+        {/* <div className="text-center">
+          <a
+            className="inline-block py-4 px-8 text-xs text-white font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded"
+            href="#"
           >
-            <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
-          </svg>
-        </a>
+            Show all posts
+          </a>
+        </div> */}
       </div>
-    </div>
+    </section>
   );
 }
