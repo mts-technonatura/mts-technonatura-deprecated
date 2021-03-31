@@ -1,6 +1,8 @@
-import FooterHome from "../../components/footer";
 import Link from "next/link";
-import {} from "../../assets/data/Gambar";
+import Image from "next/image";
+
+import FooterHome from "../../components/footer";
+import { metisAssets } from "../../assets/data/Gambar";
 // import {} from '@/components';
 export default function DashboardOverview() {
   return (
@@ -11,7 +13,7 @@ export default function DashboardOverview() {
         <section
           className="xl:bg-contain bg-top bg-no-repeat"
           style={{
-            backgroundImage: "url('/metis-assets/backgrounds/intersect.svg')"
+            backgroundImage: `url('/metis-assets/bg/intersect.svg')`
           }}
         >
           <div className="container px-4 mx-auto">
@@ -33,66 +35,59 @@ export default function DashboardOverview() {
               </div>
               <ul className="hidden lg:flex lg:items-center lg:w-auto lg:space-x-12">
                 <li>
-                  <a
-                    className="text-sm text-blueGray-400 hover:text-blueGray-500"
-                    href="#"
-                  >
-                    Home
-                  </a>
+                  <Link href="/">
+                    <a className="text-sm text-blueGray-400 hover:text-blueGray-500">
+                      Home
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-sm text-blueGray-400 hover:text-blueGray-500"
-                    href="#"
-                  >
-                    Projects
-                  </a>
+                  <Link href="/projects">
+                    <a className="text-sm text-blueGray-400 hover:text-blueGray-500">
+                      Projects
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-sm text-blueGray-400 hover:text-blueGray-500"
-                    href="#"
-                  >
-                    About
-                  </a>
+                  <Link href="/about">
+                    <a className="text-sm text-blueGray-400 hover:text-blueGray-500">
+                      About
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-sm text-blueGray-400 hover:text-blueGray-500"
-                    href="#"
-                  >
-                    Blog
-                  </a>
+                  <Link href="/blog">
+                    <a className="text-sm text-blueGray-400 hover:text-blueGray-500">
+                      Blog
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    className="text-sm text-blueGray-400 hover:text-blueGray-500"
-                    href=""
-                  >
-                    Shop
-                  </a>
+                  <Link href="/shop">
+                    <a className="text-sm text-blueGray-400 hover:text-blueGray-500">
+                      Shop
+                    </a>
+                  </Link>
                 </li>
               </ul>
               <div className="hidden lg:block">
-                <a
-                  className="mr-2 inline-block px-4 py-3 text-xs text-blue-600 hover:text-blue-700 font-semibold leading-none border border-blue-200 hover:border-blue-300 rounded"
-                  href="/login"
-                >
-                  Log In
-                </a>
-                <a
-                  className="inline-block px-4 py-3 text-xs font-semibold leading-none bg-blue-600 hover:bg-blue-700 text-white rounded"
-                  href="/signup"
-                >
-                  Sign Up
-                </a>
+                <Link href="/login">
+                  <a className="mr-2 inline-block px-4 py-3 text-xs text-blue-600 hover:text-blue-700 font-semibold leading-none border border-blue-200 hover:border-blue-300 rounded">
+                    Log In
+                  </a>
+                </Link>
+                <Link href="/signup">
+                  <a className="inline-block px-4 py-3 text-xs font-semibold leading-none bg-blue-600 hover:bg-blue-700 text-white rounded">
+                    Sign Up
+                  </a>
+                </Link>
               </div>
             </nav>
             <div className="pt-12 text-center">
               <div className="max-w-lg mx-auto mb-8">
-                <h2 className="text-3xl md:text-4xl mb-4 font-bold font-heading">
+                <h2 className="text-3xl md:text-5xl mb-4 font-bold font-heading">
                   <span>Introducing</span>
-                  <span className="text-blue-600">MTs TechnoNatura CMS</span>
+                  <span className="text-blue-600"> MTs TechnoNatura CMS</span>
                 </h2>
                 <p className="text-blueGray-400 leading-relaxed">
                   CMS to manage data on your MTs-TechnoNatura Account
@@ -106,7 +101,7 @@ export default function DashboardOverview() {
                   Try Now
                 </a>
                 <a
-                  className="block sm:inline-block py-4 px-8 text-xs text-blueGray-500 hover:text-blueGray-600 text-center font-semibold leading-none bg-blueGray-50 rounded"
+                  className="block sm:inline-block py-4 px-8 text-xs text-blueGray-500 hover:text-blueGray-600 text-center font-semibold leading-none bg-blueGray-100 rounded"
                   href="#"
                 >
                   Documentation
@@ -115,14 +110,14 @@ export default function DashboardOverview() {
             </div>
           </div>
           <div className="relative max-w-6xl mt-16 md:mt-8 mb-8 mx-auto">
-            <img src="/metis-assets/elements/pattern.png" alt="" />
+            <img src={metisAssets.elements.pattern} alt="" />
             <div
               className="absolute"
               style={{ top: "9%", left: " 14%", width: "72%", height: "66%" }}
             >
               <img
                 className="rounded"
-                src="/metis-assets/placeholders/metis-dashboard.png"
+                src={metisAssets.placeholders.metisDashboard}
                 alt=""
               />
             </div>

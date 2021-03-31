@@ -1,11 +1,13 @@
 const heroBG = require("../Img/normal/hero.png");
 const loginBG = require("../Img/normal/login.png");
 const photoBareng = require("../Img/photoBareng.jpeg");
+const aklimatisasi = require("../Img/aklimatisasi.jpeg");
 
 /* Backgrounds */
 const waveGrey = require("../Img/metis-assets/backgrounds/wave-grey.png");
 const intersectColor2 = require("../Img/metis-assets/backgrounds/intersect-color2.png");
 const colorful = require("../Img/metis-assets/backgrounds/colorful.png");
+
 /* Backgrounds */
 
 /* Elements */
@@ -28,21 +30,60 @@ const error1 = require("../Img/metis-assets/illustrations/error1.png");
 const error2 = require("../Img/metis-assets/illustrations/error2.png");
 const financialReport = require("../Img/metis-assets/illustrations/financial-report.png");
 const gamer = require("../Img/metis-assets/illustrations/gamer.png");
-const hardworkingMan = require("../Img/metis-assets/illustrations/hardworkingMan.png");
-const jobInterview = require("../Img/metis-assets/illustrations/jobInterview.png");
+const hardworkingMan = require("../Img/metis-assets/illustrations/hardworking-man.png");
+const jobInterview = require("../Img/metis-assets/illustrations/job-interview.png");
 const onlineShopping = require("../Img/metis-assets/illustrations/online-shopping.png");
 const peopleWatching = require("../Img/metis-assets/illustrations/people-watching.png");
 const people = require("../Img/metis-assets/illustrations/people.png");
 const phoneOnlineShopping = require("../Img/metis-assets/illustrations/phone-online-shopping.png");
-const teamManagement = require("../Img/metis-assets/illustrations/teamManagement.png");
+const teamManagement = require("../Img/metis-assets/illustrations/team-management.png");
 const walkDog = require("../Img/metis-assets/illustrations/walk-dog.png");
 const workTv = require("../Img/metis-assets/illustrations/work-tv.png");
 const workingFromAirport = require("../Img/metis-assets/illustrations/working-from-airport.png");
 /* illustrations */
 
+const metisAssets = {
+  backgrounds: {
+    waveGrey,
+    intersectColor2,
+    colorful
+  },
+  elements: {
+    appMockup,
+    iphone,
+    macbook,
+    patternSmall,
+    pattern,
+    threeIphones
+  },
+  illustrations: {
+    error1,
+    error2,
+    financialReport,
+    gamer,
+    hardworkingMan,
+    jobInterview,
+    onlineShopping,
+    peopleWatching,
+    people,
+    phoneOnlineShopping,
+    teamManagement,
+    walkDog,
+    workTv,
+    workingFromAirport
+  },
+  placeholders: {
+    metisMobile,
+    metisDashboardSquare,
+    metisDashboard
+  }
+};
+
 // const SvgDotPatternIcon = require("../Img/dot-pattern.svg");
 module.exports = {
   heroBG,
   loginBG,
-  photoBareng
+  photoBareng,
+  metisAssets,
+  aklimatisasi
 };

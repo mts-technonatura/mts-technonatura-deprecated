@@ -17,55 +17,51 @@ export default function Login() {
         }}
       />
 
-      <section className="bg-purple-900">
-        <div className="px-0 py-20 mx-auto max-w-7xl sm:px-4">
-          <div className="w-full px-4 pt-5 pb-6 mx-auto mt-8 mb-6 bg-white rounded-none shadow-xl sm:rounded-lg sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12 sm:px-6">
-            <h1 className="mb-4 text-lg font-semibold text-left text-gray-900">
-              Log in to your account
-            </h1>
-            <form className="mb-8 space-y-4">
-              <label className="block">
-                <span className="block mb-1 text-xs font-medium text-gray-700">
-                  Your Email
-                </span>
-                <input
-                  className="form-input"
-                  type="email"
-                  placeholder="Ex. james@bond.com"
-                  required
-                />
-              </label>
-              <label className="block">
-                <span className="block mb-1 text-xs font-medium text-gray-700">
-                  Your Password
-                </span>
-                <input
-                  className="form-input"
-                  type="password"
-                  placeholder="••••••••"
-                  required
-                />
-              </label>
-              <input
-                type="submit"
-                className="w-full py-3 mt-1 btn btn-primary"
-                value="Login"
-              />
-            </form>
+      <section className="relative py-20">
+        <div className="absolute top-0 left-0 lg:bottom-0 h-112 lg:h-auto w-full lg:w-8/12 bg-gray-500"></div>
+        <div className="relative container px-4 mx-auto">
+          <div className="flex flex-wrap items-center -mx-4">
+            <div className="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
+              <div className="max-w-md">
+                <h2 className="mb-6 text-4xl lg:text-5xl font-bold text-white">
+                  Lorem ipsum dolor sit amet consectutar domor at elis
+                </h2>
+                <p className="text-gray-50 lg:pr-10 leading-loose">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Pellentesque massa nibh, pulvinar vitae aliquet nec, accumsan
+                  aliquet orci.
+                </p>
+              </div>
+            </div>
+            <div className="w-full lg:w-1/2 px-4">
+              <div className="lg:max-w-md p-6 bg-gray-50 text-center rounded-lg">
+                <form action="#">
+                  <span className="text-sm text-gray-500 font-semibold uppercase">
+                    Sign In
+                  </span>
+                  <h3 className="mb-8 text-2xl font-bold font-heading">
+                    Join our community
+                  </h3>
+                  <input
+                    className="w-full py-3 pl-3 mb-4 bg-white rounded-lg"
+                    type="email"
+                    placeholder="E-mail address"
+                  />
+                  <input
+                    className="w-full py-3 pl-3 mb-4 bg-white rounded-lg"
+                    type="password"
+                    placeholder="Password"
+                  />
+                  <button className="w-full inline-block px-6 py-3 mb-4 text-sm text-white font-bold leading-loose bg-gray-500 hover:bg-gray-600 rounded transition duration-200">
+                    Get Started
+                  </button>
+                  <a className="text-sm text-gray-500 hover:underline" href="#">
+                    Forgot password?
+                  </a>
+                </form>
+              </div>
+            </div>
           </div>
-          <p className="mb-4 text-xs text-center text-gray-400">
-            <a href="#" className="text-purple-200 underline hover:text-white">
-              Create an account
-            </a>
-            ·
-            <a href="#" className="text-purple-200 underline hover:text-white">
-              Forgot password
-            </a>
-            ·
-            <a href="#" className="text-purple-200 underline hover:text-white">
-              Privacy & Terms
-            </a>
-          </p>
         </div>
       </section>
     </Fragment>
