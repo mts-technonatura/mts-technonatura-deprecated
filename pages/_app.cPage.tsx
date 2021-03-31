@@ -83,6 +83,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="description"
           content="Website Madrasah Tsanawiyah Techno Natura"
         />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css"
+        />
       </Head>
 
       <ThemeProvider theme={theme}>

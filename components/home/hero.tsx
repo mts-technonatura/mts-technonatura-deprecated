@@ -1,7 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { heroBG, photoBareng } from "../../assets/data/Gambar";
-
+import GitHubIcon from "@material-ui/icons/GitHub";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import InstagramIcon from "@material-ui/icons/Instagram";
 export default function Hero(): JSX.Element {
   return (
     <div className="bg-gray-50 pt-12 lg:pt-20 pb-20 ">
@@ -20,16 +22,22 @@ export default function Hero(): JSX.Element {
                 </p>
                 <div>
                   <a
-                    className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-green-600 hover:bg-green-700 text-white font-semibold rounded-l-xl rounded-t-xl transition duration-200"
+                    className="inline-block  mr-3 mx-3 leading-loose  hover:text-green-700 text-green-600 font-semibold rounded-l-xl rounded-t-xl transition duration-200 text-3xl"
                     href="#"
                   >
-                    Contact Student
+                    <i className="fab fa-facebook"></i>
                   </a>
                   <a
-                    className="inline-block w-full lg:w-auto py-2 px-6 leading-loose font-semibold bg-white hover:bg-gray-50 rounded-l-xl rounded-t-xl transition duration-200"
+                    className="inline-block mr-3  mx-3 leading-loose  hover:text-green-700 text-green-600 font-semibold rounded-l-xl rounded-t-xl transition duration-200 text-3xl"
                     href="#"
                   >
-                    Learn More
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                  <a
+                    className="inline-block  mr-3 mx-3 leading-loose  hover:text-green-700 text-green-600 font-semibold rounded-l-xl rounded-t-xl transition duration-200 text-3xl"
+                    href="https://github.com/madrasah-techonatura"
+                  >
+                    <i className="fab fa-github"></i>
                   </a>
                 </div>
               </div>
