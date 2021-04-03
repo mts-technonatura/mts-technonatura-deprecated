@@ -1,10 +1,11 @@
 import { Fragment } from "react";
 import { NextSeo } from "next-seo";
+import { pageProps } from "../ts/interfaces";
 
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
-function contactPage() {
+function contactPage({ page }: pageProps) {
   return (
     <Fragment>
       <NextSeo
@@ -14,12 +15,13 @@ function contactPage() {
         openGraph={{
           url: process.env.PUBLIC_URL,
           title: "Halaman Kontak - MTs TechnoNatura",
-          description: "Contact MTs TechnoNatura member to get more information about us."
+          description:
+            "Contact MTs TechnoNatura member to get more information about us."
         }}
       />
-      <Navbar />
+      <Navbar page={page} />
       <section className="text-gray-600 body-font relative">
-        <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+        <div className="container px-5 py-20 mx-auto flex sm:flex-nowrap flex-wrap">
           <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
             <iframe
               width="100%"
@@ -59,7 +61,7 @@ function contactPage() {
           </div>
           <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
             <h2 className="text-gray-900 text-lg mb-1 font-medium title-font">
-              Feedback
+              Contact
             </h2>
             <p className="leading-relaxed mb-5 text-gray-600">
               Post-ironic portland shabby chic echo park, banjo fashion axe
@@ -102,8 +104,8 @@ function contactPage() {
                 className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
               ></textarea>
             </div>
-            <button className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-              Button
+            <button className="btn text-white bg-green-400 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
+              Send
             </button>
             <p className="text-xs text-gray-500 mt-3">
               Chicharrones blog helvetica normcore iceland tousled brook viral

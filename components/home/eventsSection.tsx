@@ -42,6 +42,7 @@ export default function () {
               className="w-full h-80 object-cover rounded"
               src="https://images.unsplash.com/photo-1603050927325-baf630505e27?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjExMDk0fQ&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
               alt=""
+              style={{ zIndex: 1 }}
             />
           </div>
         </div>

@@ -5,4 +5,8 @@ interface User {
   joined: Date;
 }
 
-export type { User };
+interface pageProps {
+  page: string;
+}
+
+export type { User, pageProps };

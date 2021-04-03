@@ -15,11 +15,11 @@ export default function AboutSection(): JSX.Element {
     <section className="py-12 md:py-20">
       <div className="container px-4 mx-auto">
         <div className="max-w-lg mx-auto mb-12 text-center">
-          <span className="inline-block py-1 px-3 text-xs font-semibold bg-green-100 text-green-600 rounded-xl">
+          {/* <span className="inline-block py-1 px-3 text-xs font-semibold bg-green-100 text-green-600 rounded-xl">
             About MTs TechnoNatura
-          </span>
+          </span> */}
           <h2 className="text-3xl md:text-4xl mt-2 mb-4 font-bold font-heading">
-            Great students start here.
+            About MTs TechnoNatura
           </h2>
           <p className="text-blueGray-400 leading-loose">
             do you know? and blablabla bla, and MTs TechnoNatura is blabla bla

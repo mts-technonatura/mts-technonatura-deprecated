@@ -4,7 +4,6 @@
   "description": "Website Technonatura Depok",
   "theme_color": "#f0efeb",
   "background_color": "#ffffff",
-  "scope": "/",
   "start_url": "/",
   "display": "standalone",
   "icons": [

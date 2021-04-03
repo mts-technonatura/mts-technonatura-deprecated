@@ -17,11 +17,11 @@ module.exports = async function (domain) {
   const date = new Date().toJSON();
 
   const pages = await globby([
-    "pages/**/*{.page.tsx}",
-    "!pages/blog/[post].page.tsx",
+    "pages/**/*{.js,.mdx,.page.tsx}",
     "!pages/_*.js",
     "!pages/api"
   ]);
+
   // const posts = await globby(["posts/*.md", ...postsIgnore]);
 
   const sitemap = `
@@ -34,7 +34,6 @@ module.exports = async function (domain) {
                 .replace(".page.tsx", "")
                 .replace(".mdx", "")
                 .replace("/index", "");
-
               return `
                 <url>
                   <loc>${`${domain}${route}`}</loc>
