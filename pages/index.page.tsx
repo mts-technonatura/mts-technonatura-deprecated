@@ -3,6 +3,7 @@ import Link from "next/link";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
 
+import {pageProps} from '@ts/interfaces'
 import AboutSection, { Team } from "../components/home/about";
 import Hero from "../components/home/hero";
 import EventsSection from "../components/home/eventsSection";
@@ -13,7 +14,7 @@ const title = "Home | MTs TechnoNatura";
 const description =
   "Website resmi Remaja Madrasah Tsanawiyah TechnoNatura Depok. Website buatan para programmer MTs.";
 
-export default function Home() {
+export default function Home(props: pageProps) {
   return (
     <Fragment>
       <Head>
@@ -37,7 +38,7 @@ export default function Home() {
           scroll-behavior: smooth;
         }
       `}</style>
-      <NavFoot>
+      <NavFoot page={props.page}>
         <Hero />
         <AboutSection />
         <Team />
