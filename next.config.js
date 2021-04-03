@@ -56,16 +56,6 @@ const nextConfig = {
       }
     ];
   },
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      require("./scripts/sitemap-robots-generator")(env.PUBLIC_URL);
-    }
-    config.module.rules.push({
-      test: /\.md$/,
-      use: "raw-loader"
-    });
-    return config;
-  },
   env
 };
 
@@ -103,7 +93,7 @@ module.exports = withPlugins(
         pwa: {
           disable: process.env.NODE_ENV === "development",
           scope: "/",
-          sw: "service-worker.js",
+          sw: "/sw.js",
           dest: "public"
         }
       }
