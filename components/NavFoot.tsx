@@ -1,5 +1,3 @@
-
-  
 import Navbar from "./navbar";
 import Footer from "./footer";
 import { ComponentProps } from "react";
@@ -18,3 +16,4 @@ export default function NavFoot({ children, page }: NavFootI): JSX.Element {
       <Footer />
     </>
   );
+}
