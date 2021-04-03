@@ -65,10 +65,6 @@ const Navbar = (props: NavbarProps) => {
     setDrawer(!drawer);
   }
 
-  function bruhh() {
-    console.log("hey");
-  }
-
   const DrawerList = () => (
     <div
       className={clsx(classes.list, {
@@ -79,7 +75,7 @@ const Navbar = (props: NavbarProps) => {
       <List>
         {[{ text: "Home", Icon: <HomeIcon />, link: "/" }].map(
           (text, index) => (
-            <Link href={text.link}>
+            <Link key={index} href={text.link}>
               <ListItem button key={text.text}>
                 <ListItemIcon>{text.Icon}</ListItemIcon>
                 <ListItemText primary={text.text} />
