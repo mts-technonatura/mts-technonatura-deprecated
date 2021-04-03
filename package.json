@@ -43,7 +43,6 @@
     "responsive-loader": "^2.3.0",
     "rss": "^1.2.2",
     "sharp": "^0.27.0",
-    "simple-react-lightbox": "^3.5.1",
     "styled-system": "^5.1.5",
     "swr": "^0.3.11",
     "webp-loader": "^0.6.0"
