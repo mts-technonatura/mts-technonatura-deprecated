@@ -38,7 +38,7 @@ export default function signup() {
                   <a className="text-3xl font-bold leading-none">
                     <img
                       className="h-12"
-                      src="https://shuffle.dev/atis-assets/logo/atis/atis-mono-black.svg"
+                      src="/favicon.ico"
                       alt=""
                       width="auto"
                     />
