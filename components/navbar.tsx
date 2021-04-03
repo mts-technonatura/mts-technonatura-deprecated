@@ -1,21 +1,18 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useState, Fragment } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
-import ClearIcon from "@material-ui/icons/Clear";
 import MenuIcon from "@material-ui/icons/Menu";
 import HomeIcon from "@material-ui/icons/Home";
 import LoginIcon from "@material-ui/icons/ExitToApp";
+
 const useStyles = makeStyles({
   list: {
     width: 250
@@ -25,7 +22,37 @@ const useStyles = makeStyles({
   }
 });
 
-const Navbar: FC = () => {
+interface NavbarProps {
+  page: string;
+}
+
+type pagesType = Array<{ name: string; link: string }>;
+
+const pages: pagesType = [
+  {
+    name: "Home",
+    link: "/"
+  },
+  {
+    name: "Projects",
+    link: "/projects"
+  },
+  {
+    name: "About",
+    link: "/about"
+  },
+  {
+    name: "Shop",
+    link: "/shop"
+  },
+  {
+    name: "Contact",
+    link: "/contact"
+  }
+];
+
+const Navbar = (props: NavbarProps) => {
+  console.log(props.page);
   const [drawer, setDrawer] = useState<boolean>(false);
   const classes = useStyles();
 
@@ -35,16 +62,7 @@ const Navbar: FC = () => {
   }, []);
 
   function toggleDrawer() {
-    // if (
-    //   event.type === "keydown" &&
-    //   (event.key === "Tab" || event.key === "Shift")
-    // ) {
-    //   return;
-    // }
-
     setDrawer(!drawer);
-
-    // return;
   }
 
   function bruhh() {
@@ -110,102 +128,43 @@ const Navbar: FC = () => {
                 <title>MTs TechnoNatura menu</title>
               </button>
             </div>
+
             <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
-              <li>
-                <Link href="/">
-                  <a className="text-sm text-green-600 font-bold hover:text-gray-500">
-                    Home
-                  </a>
-                </Link>
-              </li>
-              <li className="text-gray-300">
-                <svg
-                  className="w-4 h-4 current-fill"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
-                  ></path>
-                </svg>
-              </li>
-              <li>
-                <Link href="/projects">
-                  <a className="text-sm text-gray-400 ">Projects</a>
-                </Link>
-              </li>
-              <li className="text-gray-300">
-                <svg
-                  className="w-4 h-4 current-fill"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
-                  ></path>
-                </svg>
-              </li>
-              <li>
-                <Link href="/about">
-                  <a className="text-sm text-gray-400 hover:text-gray-500">
-                    About
-                  </a>
-                </Link>
-              </li>
-              <li className="text-gray-300">
-                <svg
-                  className="w-4 h-4 current-fill"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
-                  ></path>
-                </svg>
-              </li>
-              <li>
-                <Link href="/blog">
-                  <a className="text-sm text-gray-400 hover:text-gray-500">
-                    Blog
-                  </a>
-                </Link>
-              </li>
-              <li className="text-gray-300">
-                <svg
-                  className="w-4 h-4 current-fill"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
-                  ></path>
-                </svg>
-              </li>
-              <li>
-                <a className="text-sm text-gray-400 hover:text-gray-500">
-                  Shop
-                </a>
-              </li>
+              {pages.map((page, idx) => (
+                <Fragment>
+                  <li>
+                    <Link href={page.link}>
+                      <a
+                        className={`text-sm  font-bold hover:text-gray-500 ${
+                          page.link == props.page
+                            ? "text-green-400"
+                            : "text-gray-300"
+                        }`}
+                      >
+                        {page.name}
+                      </a>
+                    </Link>
+                  </li>
+                  {idx != pages.length - 1 && (
+                    <li className="text-gray-300">
+                      <svg
+                        className="w-4 h-4 current-fill"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+                        ></path>
+                      </svg>
+                    </li>
+                  )}
+                </Fragment>
+              ))}
             </ul>
             <Link href="/login">
               <a className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-l-xl rounded-t-xl transition duration-200">

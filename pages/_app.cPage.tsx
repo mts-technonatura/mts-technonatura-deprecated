@@ -1,4 +1,5 @@
 import "tailwindcss/tailwind.css";
+import "../styles/globals.css";
 import { ThemeProvider, useTheme } from "@material-ui/core/styles";
 
 /* Important Scripts */
@@ -94,7 +95,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         <ProgressLoad />
         {/* {<Navbar /> && Nav} */}
-        <Component {...pageProps} />
+        <Component page={router.route} {...Component} {...pageProps} />
       </ThemeProvider>
     </>
   );

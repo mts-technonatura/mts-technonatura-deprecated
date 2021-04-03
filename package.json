@@ -16,6 +16,7 @@
     "@material-ui/icons": "^4.11.2",
     "axios": "^0.21.1",
     "canvas": "^2.6.1",
+    "framer-motion": "^4.1.2",
     "github-markdown-css": "^4.0.0",
     "gray-matter": "^4.0.2",
     "imagemin-mozjpeg": "^9.0.0",
@@ -43,7 +44,7 @@
     "rss": "^1.2.2",
     "sharp": "^0.27.0",
     "simple-react-lightbox": "^3.5.1",
-    "styled-components": "^5.2.1",
+    "styled-system": "^5.1.5",
     "swr": "^0.3.11",
     "webp-loader": "^0.6.0"
   },
