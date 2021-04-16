@@ -6,52 +6,39 @@ export default function FooterHome(): JSX.Element {
       <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
         <nav className="flex flex-wrap justify-center -mx-5 -my-2">
           <div className="px-5 py-2">
-            <a
-              href="#"
-              className="text-base leading-6 text-gray-500 hover:text-gray-900"
-            >
-              About
-            </a>
+            <Link href="/">
+              <a className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                Home
+              </a>
+            </Link>
           </div>
           <div className="px-5 py-2">
-            <a
-              href="#"
-              className="text-base leading-6 text-gray-500 hover:text-gray-900"
-            >
-              Blog
-            </a>
+            <Link href="/projects">
+              <a className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                Projects
+              </a>
+            </Link>
           </div>
           <div className="px-5 py-2">
-            <a
-              href="#"
-              className="text-base leading-6 text-gray-500 hover:text-gray-900"
-            >
-              Team
-            </a>
+            <Link href="/about">
+              <a className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                About
+              </a>
+            </Link>
           </div>
           <div className="px-5 py-2">
-            <a
-              href="#"
-              className="text-base leading-6 text-gray-500 hover:text-gray-900"
-            >
-              Pricing
-            </a>
+            <Link href="/blog">
+              <a className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                Blog
+              </a>
+            </Link>
           </div>
           <div className="px-5 py-2">
-            <a
-              href="#"
-              className="text-base leading-6 text-gray-500 hover:text-gray-900"
-            >
-              Contact
-            </a>
-          </div>
-          <div className="px-5 py-2">
-            <a
-              href="#"
-              className="text-base leading-6 text-gray-500 hover:text-gray-900"
-            >
-              Terms
-            </a>
+            <Link href="/login">
+              <a className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                Login
+              </a>
+            </Link>
           </div>
         </nav>
         <div className="flex justify-center mt-8 space-x-6">
