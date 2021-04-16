@@ -8,7 +8,9 @@ interface NavFootI {
 }
 
 export default function NavFoot({ children, page }: NavFootI): JSX.Element {
-  console.log(page);
+  if (page == "/signup") {
+    return <>{children}</>;
+  }
   return (
     <>
       <Navbar page={page} />

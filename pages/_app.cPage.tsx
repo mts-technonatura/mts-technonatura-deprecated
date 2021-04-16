@@ -1,5 +1,6 @@
 import "tailwindcss/tailwind.css";
 import "../styles/globals.css";
+import NavFoot from "../components/NavFoot";
 import { ThemeProvider, useTheme } from "@material-ui/core/styles";
 import { ChakraProvider } from "@chakra-ui/react";
 
@@ -97,7 +98,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <ProgressLoad />
         {/* {<Navbar /> && Nav} */}
         <ChakraProvider>
-          <Component page={router.route} {...Component} {...pageProps} />
+          <NavFoot page={router.route}>
+            <Component page={router.route} {...Component} {...pageProps} />
+          </NavFoot>
         </ChakraProvider>
       </ThemeProvider>
     </>

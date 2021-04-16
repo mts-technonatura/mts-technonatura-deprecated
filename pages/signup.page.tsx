@@ -1,12 +1,69 @@
 import { NextSeo } from "next-seo";
+import Visibility from "@material-ui/icons/Visibility";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import {
+  InputGroup,
+  Button,
+  Input,
+  InputRightElement,
+  Text
+} from "@chakra-ui/react";
+
 import Link from "next/link";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
 const title = "Signup | MTs Techno Natura";
 const description =
   "Join komunitas website MTs Techno Natura sekarang! Website resmi Remaja Madrasah Tsanawiyah Technonatura Depok. Website buatan para programmer MTs.";
+import { useFormik } from "formik";
+import * as yup from "yup";
+
+const validationSchema = yup.object({
+  username: yup.string().trim().required("username is required"),
+  password: yup
+    .string()
+    .min(8, "Password should be of minimum 8 characters length")
+    .required("Password is required"),
+  name: yup
+    .string()
+    .trim()
+    .matches(RegExp(/^[a-zA-Z0-9]+$/), "Only Letters and Numbers are allowed")
+    .required("name is required"),
+  email: yup.string().email().required("username is required")
+});
+
+interface State {
+  showPassword: boolean;
+}
 
 export default function signup() {
+  const [values, setValues] = useState<State>({
+    showPassword: false
+  });
+
+  const formik = useFormik({
+    initialValues: {
+      username: "",
+      password: "",
+      name: "",
+      email: ""
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+    }
+  });
+
+  const handleClickShowPassword = () => {
+    setValues({ ...values, showPassword: !values.showPassword });
+  };
+
+  const handleMouseDownPassword = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault();
+  };
+
   return (
     <Fragment>
       <NextSeo
@@ -52,81 +109,144 @@ export default function signup() {
                 </Link>
               </div>
               <div>
-                <div className="mb-6 px-3">
+                <div className="mb-6">
                   <span className="text-gray-500">Sign Up</span>
                   <h3 className="text-2xl font-bold">Create an account</h3>
                 </div>
-                <form action="">
-                  <div className="flex flex-wrap">
-                    <div className="mb-3 w-full lg:w-1/2 px-2">
-                      <input
-                        className="w-full p-4 text-xs bg-gray-50 outline-none rounded"
-                        type="text"
-                        placeholder="First Name"
-                      />
-                    </div>
-                    <div className="mb-3 w-full lg:w-1/2 px-2">
-                      <input
-                        className="w-full p-4 text-xs bg-gray-50 outline-none rounded"
-                        type="text"
-                        placeholder="Last Name"
-                      />
-                    </div>
-                  </div>
-                  <div className="mb-3 flex p-4 mx-2 bg-gray-50 rounded">
-                    <input
-                      className="w-full text-xs bg-gray-50 outline-none"
-                      type="email"
-                      placeholder="name@email.com"
-                    />
-                    <svg
-                      className="h-6 w-6 ml-4 my-auto text-gray-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
+                <form noValidate onSubmit={formik.handleSubmit}>
+                  <InputGroup
+                    mb={5}
+                    size="md"
+                    display="flex"
+                    flexDirection="column"
+                  >
+                    <Text
+                      mb="8px"
+                      fontWeight="bold"
+                      color={`${Boolean(formik.errors.name) ? "red.500" : ""}`}
                     >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="mb-6 flex p-4 mx-2 bg-gray-50 rounded">
-                    <input
-                      className="w-full text-xs bg-gray-50 outline-none"
-                      type="password"
-                      placeholder="Enter your password"
+                      Name
+                    </Text>
+
+                    <Input
+                      isInvalid={Boolean(formik.errors.name)}
+                      pr="4.5rem"
+                      id="name"
+                      name="name"
+                      onChange={formik.handleChange}
+                      value={formik.values.name}
+                      placeholder="Your Name"
                     />
-                    <button>
-                      <svg
-                        className="h-6 w-6 ml-4 my-auto text-gray-300"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
+
+                    {formik.errors.name && (
+                      <Text
+                        mb="8px"
+                        fontWeight="medium"
+                        color={`${
+                          Boolean(formik.errors.name) ? "red.500" : ""
+                        }`}
                       >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                        ></path>
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                        ></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <div className="px-3 text-center">
-                    <button className="mb-2 w-full py-4 bg-green-600 hover:bg-green-700 rounded text-sm font-bold text-gray-50 transition duration-200">
-                      Sign Up
-                    </button>
+                        {formik.errors.name}
+                      </Text>
+                    )}
+                  </InputGroup>
+
+                  <InputGroup size="md" display="flex" flexDirection="column">
+                    <Text
+                      mb="8px"
+                      fontWeight="bold"
+                      color={`${Boolean(formik.errors.email) ? "red.500" : ""}`}
+                    >
+                      email
+                    </Text>
+
+                    <Input
+                      isInvalid={Boolean(formik.errors.email)}
+                      pr="4.5rem"
+                      id="email"
+                      email="email"
+                      onChange={formik.handleChange}
+                      value={formik.values.email}
+                      placeholder="Your email"
+                    />
+
+                    {formik.errors.email && (
+                      <Text
+                        mb="8px"
+                        fontWeight="medium"
+                        color={`${
+                          Boolean(formik.errors.email) ? "red.500" : ""
+                        }`}
+                      >
+                        {formik.errors.email}
+                      </Text>
+                    )}
+                  </InputGroup>
+
+                  <InputGroup
+                    mt={5}
+                    mb={5}
+                    size="md"
+                    display="flex"
+                    flexDirection="column"
+                  >
+                    <Text
+                      mb="8px"
+                      fontWeight="bold"
+                      color={`${
+                        Boolean(formik.errors.password) ? "red.500" : ""
+                      }`}
+                    >
+                      Password
+                    </Text>
+                    <InputGroup side="md">
+                      <Input
+                        pr="4.5rem"
+                        id="password"
+                        name="password"
+                        isInvalid={Boolean(formik.errors.password)}
+                        onChange={formik.handleChange}
+                        value={formik.values.password}
+                        type={values.showPassword ? "text" : "password"}
+                        placeholder="Enter password"
+                      />
+                      <InputRightElement width="4.5rem">
+                        <Button
+                          h="1.75rem"
+                          size="sm"
+                          className="btn button"
+                          onClick={handleClickShowPassword}
+                        >
+                          {values.showPassword ? (
+                            <Visibility />
+                          ) : (
+                            <VisibilityOff />
+                          )}
+                        </Button>
+                      </InputRightElement>
+                    </InputGroup>
+
+                    {formik.errors.password && (
+                      <Text
+                        mb="8px"
+                        fontWeight="medium"
+                        color={`${
+                          Boolean(formik.errors.password) ? "red.500" : ""
+                        }`}
+                      >
+                        {formik.errors.password}
+                      </Text>
+                    )}
+                  </InputGroup>
+                  <div className="text-center">
+                    <Button
+                      isFullWidth
+                      type="submit"
+                      colorScheme="teal"
+                      variant="solid"
+                    >
+                      Signup
+                    </Button>
                     <span className="text-gray-400 text-xs">
                       <span>Already have an account?</span>
                       <a className="text-green-600 hover:underline" href="#">

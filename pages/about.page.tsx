@@ -1,4 +1,3 @@
-import NavFoot from "../components/NavFoot";
 import {
   workingWithFriends,
   aklimatisasi,
@@ -14,7 +13,7 @@ import { pageProps } from "../ts/interfaces";
 
 export default function AboutPage(props: pageProps) {
   return (
-    <NavFoot page={props.page}>
+    <>
       <div className="relative">
         <img
           src={workingWithFriends}
@@ -106,6 +105,6 @@ export default function AboutPage(props: pageProps) {
           </div>
         </div>
       </section>
-    </NavFoot>
+    </>
   );
 }

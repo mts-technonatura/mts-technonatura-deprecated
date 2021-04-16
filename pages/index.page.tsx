@@ -39,13 +39,11 @@ export default function Home(props: pageProps) {
           scroll-behavior: smooth;
         }
       `}</style>
-      <NavFoot page={props.page}>
-        <Hero />
-        <AboutSection />
-        <Team />
-        <EventsSection />
-        <BlogSection />
-      </NavFoot>
+      <Hero />
+      <AboutSection />
+      <Team />
+      <EventsSection />
+      <BlogSection />
     </Fragment>
   );
 }

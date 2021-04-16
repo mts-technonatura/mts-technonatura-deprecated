@@ -26,8 +26,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center"
   },
   avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main
+    margin: theme.spacing(1)
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -81,10 +80,13 @@ export default function Login() {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
+          <Avatar
+            style={{ backgroundColor: "#f50057" }}
+            className={classes.avatar}
+          >
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" align="center" variant="h5">
+          <Typography marginTop={2} component="h1" align="center" variant="h5">
             Sign in to MTs TechnoNatura Account
           </Typography>
           <form
@@ -122,6 +124,7 @@ export default function Login() {
               helperText={formik.touched.password && formik.errors.password}
             />
             <FormControlLabel
+              style={{ marginTop: 10, marginBottom: 10 }}
               control={
                 <Checkbox
                   value="remember"
@@ -143,7 +146,7 @@ export default function Login() {
             >
               Sign In
             </Button>
-            <Grid container>
+            <Grid container marginTop={3}>
               {/* <Grid item xs>
                 <Link href="#" variant="body2">
                   Forgot password?
@@ -159,7 +162,7 @@ export default function Login() {
             </Grid>
           </form>
         </div>
-        <Box mt={8}>
+        <Box mt={8} mb={3}>
           <Copyright />
         </Box>
       </Container>
