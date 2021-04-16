@@ -5,6 +5,7 @@ const aklimatisasi = require("../Img/aklimatisasi.jpeg");
 const madinah1 = require("../Img/madinah1.jpeg");
 const madinah2 = require("../Img/madinah2.jpeg");
 const madinah3 = require("../Img/madinah3.jpeg");
+const workingWithFriends = require("../Img/workingWithFriends.jpeg");
 
 const makkah1 = require("../Img/makkah1.jpeg");
 const makkah2 = require("../Img/makkah2.jpeg");
@@ -98,5 +99,6 @@ module.exports = {
   madinah3,
   makkah1,
   makkah2,
-  makkah3
+  makkah3,
+  workingWithFriends
 };
