@@ -1,4 +1,21 @@
-import { Fragment } from "react";
+import { Button, Text, Stack, Input } from "@chakra-ui/react";
+import TextField from "@material-ui/core/TextField";
+
+import { useFormik } from "formik";
+import * as yup from "yup";
+
+const validationSchema = yup.object({
+  name: yup.string().trim().required("name is required"),
+  email: yup
+    .string()
+    .email("Enter a valid email")
+    .required("email is required"),
+  message: yup
+    .string()
+    .min(100, "min 50 characters")
+    .required("message is required")
+});
+import React, { Fragment, useState } from "react";
 import { NextSeo } from "next-seo";
 import { pageProps } from "../ts/interfaces";
 
@@ -6,6 +23,17 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
 function contactPage({ page }: pageProps) {
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      message: ""
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+    }
+  });
   return (
     <Fragment>
       <NextSeo
@@ -50,7 +78,7 @@ function contactPage({ page }: pageProps) {
                   EMAIL
                 </h2>
                 <a className="text-indigo-500 leading-relaxed">
-                  example@email.com
+                  aldhaneka.contact@email.com
                 </a>
                 <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">
                   PHONE
@@ -59,59 +87,88 @@ function contactPage({ page }: pageProps) {
               </div>
             </div>
           </div>
-          <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+          <form
+            noValidate
+            onSubmit={formik.handleSubmit}
+            className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0"
+          >
             <h2 className="text-gray-900 text-lg mb-1 font-medium title-font">
               Contact
             </h2>
             <p className="leading-relaxed mb-5 text-gray-600">
-              Post-ironic portland shabby chic echo park, banjo fashion axe
+              Want to know more about MTs TechnoNatura? Contact us!
             </p>
-            <div className="relative mb-4">
-              <label htmlFor="name" className="leading-7 text-sm text-gray-600">
-                Name
-              </label>
-              <input
+            <Stack>
+              <Text color={`${formik.errors.name && "red.400"}`}>Name</Text>
+              <Input
+                isInvalid={Boolean(formik.errors.name)}
                 type="text"
                 id="name"
                 name="name"
-                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                errorBorderColor={`${formik.errors.name && "red.400"}`}
+                value={formik.values.name}
+                onChange={formik.handleChange}
+                placeholder="Nama anda"
               />
-            </div>
-            <div className="relative mb-4">
-              <label
-                htmlFor="email"
-                className="leading-7 text-sm text-gray-600"
+              <Text
+                mt="8px"
+                fontSize="13px"
+                color={`${formik.errors.name && "red.400"}`}
               >
-                Email
-              </label>
-              <input
-                type="email"
+                {formik.errors.name}
+              </Text>
+            </Stack>
+            <Stack mb={3} mt={3}>
+              <Text color={`${formik.errors.email && "red.400"}`}>Email</Text>
+              <Input
                 id="email"
                 name="email"
-                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                isInvalid={Boolean(formik.errors.email)}
+                type="text"
+                value={formik.values.email}
+                errorBorderColor={`${formik.errors.email && "red.400"}`}
+                onChange={formik.handleChange}
+                placeholder="Email anda"
               />
-            </div>
+              <Text
+                mt="8px"
+                fontSize="13px"
+                color={`${formik.errors.email && "red.400"}`}
+              >
+                {formik.errors.email}
+              </Text>
+            </Stack>
             <div className="relative mb-4">
               <label
                 htmlFor="message"
-                className="leading-7 text-sm text-gray-600"
+                className={`leading-7 text-sm ${
+                  !formik.errors.message ? "text-gray-600" : "text-red-600"
+                }`}
               >
                 Message
               </label>
               <textarea
                 id="message"
                 name="message"
-                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                value={formik.values.message}
+                onChange={formik.handleChange}
+                className={`w-full bg-white rounded border ${
+                  !formik.errors.message ? "border-gray-300" : "border-red-600"
+                } focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out`}
               ></textarea>
+              <Text className="text-red-600" fontSize="xs">
+                {formik.errors.message}
+              </Text>
             </div>
-            <button className="btn text-white bg-green-400 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
+            <Button type="submit" colorScheme="teal" variant="solid">
               Send
-            </button>
+            </Button>
+
             <p className="text-xs text-gray-500 mt-3">
               Chicharrones blog helvetica normcore iceland tousled brook viral
               artisan.
             </p>
-          </div>
+          </form>
         </div>
       </section>
       <Footer />
