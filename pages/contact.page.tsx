@@ -19,9 +19,6 @@ import React, { Fragment, useState } from "react";
 import { NextSeo } from "next-seo";
 import { pageProps } from "../ts/interfaces";
 
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-
 function contactPage({ page }: pageProps) {
   const formik = useFormik({
     initialValues: {
@@ -47,7 +44,6 @@ function contactPage({ page }: pageProps) {
             "Contact MTs TechnoNatura member to get more information about us."
         }}
       />
-      <Navbar page={page} />
       <section className="text-gray-600 body-font relative">
         <div className="container px-5 py-20 mx-auto flex sm:flex-nowrap flex-wrap">
           <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
@@ -171,7 +167,6 @@ function contactPage({ page }: pageProps) {
           </form>
         </div>
       </section>
-      <Footer />
     </Fragment>
   );
 }
