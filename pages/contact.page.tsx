@@ -3,6 +3,7 @@ import TextField from "@material-ui/core/TextField";
 
 import { useFormik } from "formik";
 import * as yup from "yup";
+import axios from "axios";
 
 const validationSchema = yup.object({
   name: yup.string().trim().required("name is required"),
@@ -12,7 +13,8 @@ const validationSchema = yup.object({
     .required("email is required"),
   message: yup
     .string()
-    .min(100, "min 50 characters")
+    .min(10, "min 10 characters")
+    .max(500, "500 characters is too long dude")
     .required("message is required")
 });
 import React, { Fragment, useState } from "react";
@@ -27,8 +29,24 @@ function contactPage({ page }: pageProps) {
       message: ""
     },
     validationSchema: validationSchema,
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: async (values) => {
+      console.log(process.env.contactURL)
+      axios({
+        method: "POST",
+        data: {
+          message: formik.values.message,
+          email: formik.values.email,
+          name: formik.values.name
+        },
+        url: process.env.contactURL || 'http://localhost:3030/contact',
+      })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+      // console.log("response", response);
     }
   });
   return (
