@@ -1,4 +1,3 @@
-import { NextSeo } from "next-seo";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import {
@@ -11,6 +10,8 @@ import {
 
 import Link from "next/link";
 import { Fragment, useState } from "react";
+import { NextSeo } from "next-seo";
+import axios from "axios";
 
 const title = "Signup | MTs Techno Natura";
 const description =
@@ -51,6 +52,9 @@ export default function signup() {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
+      const response = axios({
+        url: ""
+      });
     }
   });
 
