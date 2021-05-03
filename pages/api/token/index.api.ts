@@ -6,3 +6,4 @@ export default function GetJWTToken(req: NextApiRequest, res: NextApiResponse) {
 
   res.status(200).json({ message: "hello there" });
 }
+//
