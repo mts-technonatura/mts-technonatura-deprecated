@@ -22,7 +22,7 @@ import { pageProps } from "../ts/interfaces";
 
 function contactPage({ page }: pageProps) {
   const toast = useToast();
-
+  console.log(process.env.contactURL);
   const [submitting, setSubmit] = useState<boolean>(false);
   const formik = useFormik({
     initialValues: {
@@ -41,7 +41,9 @@ function contactPage({ page }: pageProps) {
           name: formik.values.name
         },
 
-        url: process.env.contactURL || "http://localhost:3030/contact",
+        url:
+          process.env.NEXT_PUBLIC_CONTACT_URL ||
+          "http://localhost:3030/contact",
         withCredentials: true
       })
         .then((res) => {
